@@ -1,0 +1,25 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "1d70338b-4f59-41bc-a76a-cd39f7971e09",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+    "1d70338b-4f59-41bc-a76a-cd39f7971e09" : {
+
+    }
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "1d70338b-4f59-41bc-a76a-cd39f7971e09" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "AE695AED-FC83-4B98-88CB-D8FDB25400BE",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "1d70338b-4f59-41bc-a76a-cd39f7971e09" : "svnCopooo\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "copooo",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "client\/ios\/copooo_ios(11.16) 2\/copooo.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "svn:\/\/54.223.120.187\/repos\/svnCopooo",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "1d70338b-4f59-41bc-a76a-cd39f7971e09"
+    }
+  ]
+}

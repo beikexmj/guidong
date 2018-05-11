@@ -1,0 +1,54 @@
+
+/* Class = "UIButton"; normalTitle = "公共信息"; ObjectID = "10n-0l-IJI"; */
+"10n-0l-IJI.normalTitle" = "公共信息";
+
+/* Class = "UIButton"; normalTitle = "桂东新闻"; ObjectID = "76r-if-w0z"; */
+"76r-if-w0z.normalTitle" = "桂东新闻";
+
+/* Class = "UILabel"; text = "电卡管理"; ObjectID = "7CH-io-V17"; */
+"7CH-io-V17.text" = "电卡管理";
+
+/* Class = "UIButton"; normalTitle = " 桂东电力"; ObjectID = "9uS-Nd-kKw"; */
+"9uS-Nd-kKw.normalTitle" = " 桂东电力";
+
+/* Class = "UILabel"; text = "我的电费"; ObjectID = "HXO-jx-Tsc"; */
+"HXO-jx-Tsc.text" = "我的电费";
+
+/* Class = "UIButton"; normalTitle = "电价法规"; ObjectID = "HpD-Zz-xpL"; */
+"HpD-Zz-xpL.normalTitle" = "电价法规";
+
+/* Class = "UIButton"; normalTitle = "      "; ObjectID = "JAQ-lV-LaA"; */
+"JAQ-lV-LaA.normalTitle" = "      ";
+
+/* Class = "UITabBarItem"; title = "门户首页"; ObjectID = "KUY-7V-ApZ"; */
+"KUY-7V-ApZ.title" = "门户首页";
+
+/* Class = "UILabel"; text = "设置"; ObjectID = "aJD-Cd-Lfa"; */
+"aJD-Cd-Lfa.text" = "设置";
+
+/* Class = "UILabel"; text = "我的余额(元)"; ObjectID = "aPD-bU-Wwp"; */
+"aPD-bU-Wwp.text" = "我的余额(元)";
+
+/* Class = "UILabel"; text = "缴费记录"; ObjectID = "bJD-f1-Aot"; */
+"bJD-f1-Aot.text" = "缴费记录";
+
+/* Class = "UILabel"; text = "0.00"; ObjectID = "cmA-NX-9jA"; */
+"cmA-NX-9jA.text" = "0.00";
+
+/* Class = "UIButton"; normalTitle = "帮助"; ObjectID = "gEa-80-mgs"; */
+"gEa-80-mgs.normalTitle" = "帮助";
+
+/* Class = "UILabel"; text = "设置"; ObjectID = "i7Z-jf-ojv"; */
+"i7Z-jf-ojv.text" = "设置";
+
+/* Class = "UITabBarItem"; title = "个人中心"; ObjectID = "lUG-y6-O7U"; */
+"lUG-y6-O7U.title" = "个人中心";
+
+/* Class = "UITabBarItem"; title = "电费缴纳"; ObjectID = "mOk-a2-plT"; */
+"mOk-a2-plT.title" = "电费缴纳";
+
+/* Class = "UILabel"; text = "邀请注册"; ObjectID = "u3z-i5-PlN"; */
+"u3z-i5-PlN.text" = "邀请注册";
+
+/* Class = "UILabel"; text = "安全中心"; ObjectID = "y2R-Ne-IPc"; */
+"y2R-Ne-IPc.text" = "安全中心";

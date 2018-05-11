@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="NoElectricityCardView">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bm5-jG-re8">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="椭圆-1" translatesAutoresizingMaskIntoConstraints="NO" id="19c-A0-bFO">
+                            <rect key="frame" x="0.0" y="333" width="375" height="221"/>
+                        </imageView>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home_none_bac1" translatesAutoresizingMaskIntoConstraints="NO" id="I9c-XX-qec">
+                            <rect key="frame" x="50" y="50" width="275" height="253"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="253" id="4Ya-ok-sl1"/>
+                            </constraints>
+                        </imageView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OwZ-l4-4dg">
+                            <rect key="frame" x="40" y="445" width="295" height="50"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="KT4-aG-a5o"/>
+                            </constraints>
+                            <state key="normal" title="绑定电卡" backgroundImage="图层-11">
+                                <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" red="0.086274509799999996" green="0.61568627450000002" blue="0.90980392160000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="I9c-XX-qec" secondAttribute="trailing" constant="50" id="2q5-SC-jmO"/>
+                        <constraint firstItem="19c-A0-bFO" firstAttribute="top" secondItem="I9c-XX-qec" secondAttribute="bottom" constant="30" id="3BN-DE-APn"/>
+                        <constraint firstItem="19c-A0-bFO" firstAttribute="leading" secondItem="Bm5-jG-re8" secondAttribute="leading" id="ceq-mq-d8s"/>
+                        <constraint firstAttribute="trailing" secondItem="19c-A0-bFO" secondAttribute="trailing" id="doQ-cT-xXJ"/>
+                        <constraint firstAttribute="bottom" secondItem="19c-A0-bFO" secondAttribute="bottom" id="gNv-0I-mUT"/>
+                        <constraint firstItem="I9c-XX-qec" firstAttribute="leading" secondItem="Bm5-jG-re8" secondAttribute="leading" constant="50" id="iEN-iU-ZID"/>
+                        <constraint firstAttribute="bottom" secondItem="OwZ-l4-4dg" secondAttribute="bottom" constant="59" id="iKQ-8a-qaL"/>
+                        <constraint firstAttribute="trailing" secondItem="OwZ-l4-4dg" secondAttribute="trailing" constant="40" id="jPW-Tl-JyD"/>
+                        <constraint firstItem="I9c-XX-qec" firstAttribute="top" secondItem="Bm5-jG-re8" secondAttribute="top" constant="50" id="mGI-oM-FMs"/>
+                        <constraint firstItem="OwZ-l4-4dg" firstAttribute="leading" secondItem="Bm5-jG-re8" secondAttribute="leading" constant="40" id="rCu-cv-LV8"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="Bm5-jG-re8" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="1p3-v1-IgF"/>
+                <constraint firstAttribute="trailing" secondItem="Bm5-jG-re8" secondAttribute="trailing" id="OWi-Zi-peG"/>
+                <constraint firstAttribute="bottom" secondItem="Bm5-jG-re8" secondAttribute="bottom" id="xZN-po-N14"/>
+                <constraint firstItem="Bm5-jG-re8" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="yr3-ee-GKa"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="addElecCard" destination="OwZ-l4-4dg" id="Wyt-XJ-FBM"/>
+                <outlet property="backImage2Constant" destination="4Ya-ok-sl1" id="hg1-86-GAP"/>
+            </connections>
+            <point key="canvasLocation" x="223.5" y="287"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="home_none_bac1" width="299" height="276"/>
+        <image name="图层-11" width="254" height="68"/>
+        <image name="椭圆-1" width="375" height="256"/>
+    </resources>
+</document>

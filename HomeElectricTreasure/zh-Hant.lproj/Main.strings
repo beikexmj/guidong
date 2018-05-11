@@ -1,0 +1,72 @@
+
+/* Class = "UIButton"; normalTitle = "查看更多"; ObjectID = "1w3-di-Jif"; */
+"1w3-di-Jif.normalTitle" = "查看更多";
+
+/* Class = "UILabel"; text = "待使用"; ObjectID = "3V4-4w-o8P"; */
+"3V4-4w-o8P.text" = "待使用";
+
+/* Class = "UIButton"; normalTitle = "账户管理"; ObjectID = "4Am-JE-kxc"; */
+"4Am-JE-kxc.normalTitle" = "账户管理";
+
+/* Class = "UIButton"; normalTitle = "电卡管理"; ObjectID = "7cn-Mn-50e"; */
+"7cn-Mn-50e.normalTitle" = "电卡管理";
+
+/* Class = "UIButton"; normalTitle = "余额充值"; ObjectID = "FEY-D4-m4K"; */
+"FEY-D4-m4K.normalTitle" = "余额充值";
+
+/* Class = "UILabel"; text = "积分兑换"; ObjectID = "Gjh-xz-ovh"; */
+"Gjh-xz-ovh.text" = "积分兑换";
+
+/* Class = "UILabel"; text = "我的电费"; ObjectID = "HXO-jx-Tsc"; */
+"HXO-jx-Tsc.text" = "我的电费";
+
+/* Class = "UIButton"; normalTitle = "      "; ObjectID = "JAQ-lV-LaA"; */
+"JAQ-lV-LaA.normalTitle" = "      ";
+
+/* Class = "UILabel"; text = "小凡凡"; ObjectID = "JkJ-WS-TUx"; */
+"JkJ-WS-TUx.text" = "小凡凡";
+
+/* Class = "UITabBarItem"; title = "积分兑换"; ObjectID = "KUY-7V-ApZ"; */
+"KUY-7V-ApZ.title" = "积分兑换";
+
+/* Class = "UIButton"; normalTitle = " 积分"; ObjectID = "WgM-tM-jXv"; */
+"WgM-tM-jXv.normalTitle" = " 积分";
+
+/* Class = "UIButton"; normalTitle = "电费记录"; ObjectID = "XKX-Gk-qxj"; */
+"XKX-Gk-qxj.normalTitle" = "电费记录";
+
+/* Class = "UILabel"; text = "3567.00"; ObjectID = "aPD-bU-Wwp"; */
+"aPD-bU-Wwp.text" = "3567.00";
+
+/* Class = "UIButton"; normalTitle = "票券中心"; ObjectID = "bAr-Sg-EhH"; */
+"bAr-Sg-EhH.normalTitle" = "票券中心";
+
+/* Class = "UILabel"; text = "320"; ObjectID = "cmA-NX-9jA"; */
+"cmA-NX-9jA.text" = "320";
+
+/* Class = "UIButton"; normalTitle = " 账户余额(元)"; ObjectID = "dni-A8-1Ze"; */
+"dni-A8-1Ze.normalTitle" = " 账户余额(元)";
+
+/* Class = "UIButton"; normalTitle = "安全中心"; ObjectID = "h96-LD-gHi"; */
+"h96-LD-gHi.normalTitle" = "安全中心";
+
+/* Class = "UILabel"; text = "可用积分"; ObjectID = "icJ-hn-B4P"; */
+"icJ-hn-B4P.text" = "可用积分";
+
+/* Class = "UITabBarItem"; title = "个人中心"; ObjectID = "lUG-y6-O7U"; */
+"lUG-y6-O7U.title" = "个人中心";
+
+/* Class = "UITabBarItem"; title = "电费缴纳"; ObjectID = "mOk-a2-plT"; */
+"mOk-a2-plT.title" = "电费缴纳";
+
+/* Class = "UILabel"; text = "2310"; ObjectID = "pFR-F5-Oyh"; */
+"pFR-F5-Oyh.text" = "2310";
+
+/* Class = "UILabel"; text = "已过期"; ObjectID = "qGh-nk-g1G"; */
+"qGh-nk-g1G.text" = "已过期";
+
+/* Class = "UILabel"; text = "暂无服务公告"; ObjectID = "srq-0b-fso"; */
+"srq-0b-fso.text" = "暂无服务公告";
+
+/* Class = "UILabel"; text = "已使用"; ObjectID = "v9S-ij-5bE"; */
+"v9S-ij-5bE.text" = "已使用";
