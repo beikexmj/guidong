@@ -11,6 +11,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FileManagerViewController">
             <connections>
+                <outlet property="deleteButton" destination="cfc-td-eXw" id="ep7-qL-3g1"/>
+                <outlet property="deleteTopConstraint" destination="Hjh-3U-F5i" id="Imw-Hw-cgO"/>
                 <outlet property="navigationBackgroundHeight" destination="zDn-sI-D3Y" id="GfZ-VW-Rbc"/>
                 <outlet property="tableView" destination="mg1-jI-aLX" id="HfX-Tt-fEC"/>
                 <outlet property="titleLabel" destination="T9P-Yr-dSy" id="XEy-ZN-KpB"/>
@@ -82,20 +84,35 @@
                         <constraint firstAttribute="height" constant="64" id="zDn-sI-D3Y"/>
                     </constraints>
                 </view>
+                <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cfc-td-eXw">
+                    <rect key="frame" x="0.0" y="667" width="375" height="49"/>
+                    <color key="backgroundColor" red="0.79916556248133774" green="0.79916556248133774" blue="0.79916556248133774" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="49" id="ysh-b5-sw6"/>
+                    </constraints>
+                    <state key="normal" image="my_icon_delete"/>
+                    <connections>
+                        <action selector="onMultipleDeletePressed:" destination="-1" eventType="touchUpInside" id="P0d-DP-YAs"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="mg1-jI-aLX" secondAttribute="trailing" id="6uC-uZ-B5X"/>
+                <constraint firstItem="cfc-td-eXw" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="bottom" id="Hjh-3U-F5i"/>
                 <constraint firstAttribute="bottom" secondItem="mg1-jI-aLX" secondAttribute="bottom" id="Iji-ES-cq5"/>
+                <constraint firstItem="cfc-td-eXw" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Q2V-4t-U7K"/>
                 <constraint firstAttribute="trailing" secondItem="t9q-OC-htX" secondAttribute="trailing" id="bDs-Za-lLG"/>
                 <constraint firstItem="mg1-jI-aLX" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="hAx-3U-WX4"/>
                 <constraint firstItem="t9q-OC-htX" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="icR-Bu-SEt"/>
                 <constraint firstItem="mg1-jI-aLX" firstAttribute="top" secondItem="t9q-OC-htX" secondAttribute="bottom" id="moR-TC-ceh"/>
+                <constraint firstAttribute="trailing" secondItem="cfc-td-eXw" secondAttribute="trailing" id="qsf-LJ-igj"/>
                 <constraint firstItem="t9q-OC-htX" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="ysD-LY-908"/>
             </constraints>
         </view>
     </objects>
     <resources>
         <image name="icon_back_black" width="8" height="15"/>
+        <image name="my_icon_delete" width="23" height="25"/>
     </resources>
 </document>

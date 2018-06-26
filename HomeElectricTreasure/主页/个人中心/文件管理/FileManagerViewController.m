@@ -7,6 +7,8 @@
 //
 
 #import "FileManagerViewController.h"
+#import "UIColor+WB.h"
+#import "UIView+Frame.h"
 
 static NSString *const kFileManagerTableViewCell = @"com.copticomm.cell.filemanager";
 
@@ -16,6 +18,8 @@ static NSString *const kFileManagerTableViewCell = @"com.copticomm.cell.filemana
 @property (weak, nonatomic) IBOutlet UILabel            *titleLabel;
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *navigationBackgroundHeight;
+@property (weak, nonatomic) IBOutlet UIButton *deleteButton;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *deleteTopConstraint;
 
 @end
 
@@ -23,7 +27,12 @@ static NSString *const kFileManagerTableViewCell = @"com.copticomm.cell.filemana
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self configurationNavigation];
     [self prepareTableView];
+    
+    [self.deleteButton setBackgroundImage:[UIColor colorWithHex:0x9c9c9c].toImage forState:UIControlStateDisabled];
+    [self.deleteButton setBackgroundImage:[UIColor colorWithHex:0x00a7ff].toImage forState:UIControlStateNormal];
+    
 }
 
 - (void)configurationNavigation
@@ -36,8 +45,32 @@ static NSString *const kFileManagerTableViewCell = @"com.copticomm.cell.filemana
 
 - (void)prepareTableView
 {
+    if (@available(iOS 11.0, *)) {
+        self.tableView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+    } else {
+        self.automaticallyAdjustsScrollViewInsets = NO;
+    }
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+    self.tableView.tableFooterView = [UIView new];
+}
+
+- (void)showMutipleEditing
+{
+    self.tableView.contentInset = UIEdgeInsetsMake(0, 0, self.deleteButton.height, 0);
+    [UIView animateWithDuration:0.25 animations:^{
+        self.deleteTopConstraint.constant = -48;
+        [self.view layoutIfNeeded];
+    }];
+}
+
+- (void)hideMutipleEditing
+{
+    self.tableView.contentInset = UIEdgeInsetsZero;
+    [UIView animateWithDuration:0.25 animations:^{
+        self.deleteTopConstraint.constant = 0;
+        [self.view layoutIfNeeded];
+    }];
 }
 
 #pragma mark - UITableViewDataSource
@@ -53,15 +86,49 @@ static NSString *const kFileManagerTableViewCell = @"com.copticomm.cell.filemana
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle
                                       reuseIdentifier:kFileManagerTableViewCell];
+        cell.textLabel.textColor = RGBCOLOR(48, 48, 48);
+        cell.detailTextLabel.textColor = RGBCOLOR(156, 156, 156);
     }
     cell.textLabel.text = @"文件名称.pdf";
     cell.detailTextLabel.text = @"2018-06-26    09:20:50";
+    cell.imageView.image = [UIImage imageNamed:@"my_pdf"];
     return cell;
 }
 
+#pragma mark - UITableViewDelegate
+
 - (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return UITableViewCellEditingStyleDelete | UITableViewCellEditingStyleInsert;
+    return tableView.allowsMultipleSelection ? (UITableViewCellEditingStyleDelete | UITableViewCellEditingStyleInsert) : UITableViewCellEditingStyleDelete;
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return @"删除";
+}
+
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return YES;
+}
+
+- (BOOL)tableView:(UITableView *)tableView shouldIndentWhileEditingRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return NO;
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        
+    }
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (!tableView.allowsMultipleSelection) {
+        [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    }
 }
 
 #pragma mark - ACTION
@@ -74,6 +141,15 @@ static NSString *const kFileManagerTableViewCell = @"com.copticomm.cell.filemana
     sender.selected = !sender.selected;
     self.tableView.allowsMultipleSelection = sender.selected;
     [self.tableView setEditing:sender.selected animated:YES];
+    if (sender.selected) {
+        [self showMutipleEditing];
+    } else {
+        [self hideMutipleEditing];
+    }
+}
+
+- (IBAction)onMultipleDeletePressed:(id)sender {
+    
 }
 
 @end
