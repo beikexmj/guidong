@@ -80,6 +80,13 @@
 		7C7713061F38495B00F708A3 /* PayElectricityFeeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C7713051F38495B00F708A3 /* PayElectricityFeeView.m */; };
 		7C7713081F38496E00F708A3 /* PayElectricityFeeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C7713071F38496E00F708A3 /* PayElectricityFeeView.xib */; };
 		7C7DF1BF1F6F97F60077C7AE /* jujiahe.cer in Resources */ = {isa = PBXBuildFile; fileRef = 7C7DF1BE1F6F97F60077C7AE /* jujiahe.cer */; };
+		7C842AB220E2177500368876 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C842AA820E2177500368876 /* FMDatabase.m */; };
+		7C842AB320E2177500368876 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C842AAA20E2177500368876 /* FMDatabaseAdditions.m */; };
+		7C842AB420E2177500368876 /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C842AAC20E2177500368876 /* FMDatabasePool.m */; };
+		7C842AB520E2177500368876 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C842AAE20E2177500368876 /* FMDatabaseQueue.m */; };
+		7C842AB620E2177500368876 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C842AB120E2177500368876 /* FMResultSet.m */; };
+		7C842ABA20E218A500368876 /* CopoooDBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C842AB920E218A500368876 /* CopoooDBManager.m */; };
+		7C842ABD20E21B3D00368876 /* CopoooDBDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C842ABC20E21B3D00368876 /* CopoooDBDataModel.m */; };
 		7C9F1CD71F43F34E008D0A4C /* ElectricUserPointTrendDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C9F1CD61F43F34E008D0A4C /* ElectricUserPointTrendDataModel.m */; };
 		7C9F1CDA1F4411E3008D0A4C /* ElectricUserQueryOtherByDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C9F1CD91F4411E3008D0A4C /* ElectricUserQueryOtherByDataModel.m */; };
 		7C9F1CDD1F44289D008D0A4C /* ElectricUserRankingDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C9F1CDC1F44289D008D0A4C /* ElectricUserRankingDataModel.m */; };
@@ -588,6 +595,21 @@
 		7C7713051F38495B00F708A3 /* PayElectricityFeeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PayElectricityFeeView.m; sourceTree = "<group>"; };
 		7C7713071F38496E00F708A3 /* PayElectricityFeeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PayElectricityFeeView.xib; sourceTree = "<group>"; };
 		7C7DF1BE1F6F97F60077C7AE /* jujiahe.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = jujiahe.cer; sourceTree = "<group>"; };
+		7C842AA720E2177500368876 /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
+		7C842AA820E2177500368876 /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
+		7C842AA920E2177500368876 /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
+		7C842AAA20E2177500368876 /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
+		7C842AAB20E2177500368876 /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
+		7C842AAC20E2177500368876 /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
+		7C842AAD20E2177500368876 /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
+		7C842AAE20E2177500368876 /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
+		7C842AAF20E2177500368876 /* FMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDB.h; sourceTree = "<group>"; };
+		7C842AB020E2177500368876 /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
+		7C842AB120E2177500368876 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
+		7C842AB820E218A500368876 /* CopoooDBManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CopoooDBManager.h; sourceTree = "<group>"; };
+		7C842AB920E218A500368876 /* CopoooDBManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CopoooDBManager.m; sourceTree = "<group>"; };
+		7C842ABB20E21B3D00368876 /* CopoooDBDataModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CopoooDBDataModel.h; sourceTree = "<group>"; };
+		7C842ABC20E21B3D00368876 /* CopoooDBDataModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CopoooDBDataModel.m; sourceTree = "<group>"; };
 		7C9F1CD51F43F34E008D0A4C /* ElectricUserPointTrendDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ElectricUserPointTrendDataModel.h; sourceTree = "<group>"; };
 		7C9F1CD61F43F34E008D0A4C /* ElectricUserPointTrendDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ElectricUserPointTrendDataModel.m; sourceTree = "<group>"; };
 		7C9F1CD81F4411E3008D0A4C /* ElectricUserQueryOtherByDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ElectricUserQueryOtherByDataModel.h; sourceTree = "<group>"; };
@@ -1627,6 +1649,35 @@
 			path = webView;
 			sourceTree = "<group>";
 		};
+		7C842AA620E2177500368876 /* fmdb */ = {
+			isa = PBXGroup;
+			children = (
+				7C842AA720E2177500368876 /* FMDatabase.h */,
+				7C842AA820E2177500368876 /* FMDatabase.m */,
+				7C842AA920E2177500368876 /* FMDatabaseAdditions.h */,
+				7C842AAA20E2177500368876 /* FMDatabaseAdditions.m */,
+				7C842AAB20E2177500368876 /* FMDatabasePool.h */,
+				7C842AAC20E2177500368876 /* FMDatabasePool.m */,
+				7C842AAD20E2177500368876 /* FMDatabaseQueue.h */,
+				7C842AAE20E2177500368876 /* FMDatabaseQueue.m */,
+				7C842AAF20E2177500368876 /* FMDB.h */,
+				7C842AB020E2177500368876 /* FMResultSet.h */,
+				7C842AB120E2177500368876 /* FMResultSet.m */,
+			);
+			path = fmdb;
+			sourceTree = "<group>";
+		};
+		7C842AB720E217FD00368876 /* 数据库 */ = {
+			isa = PBXGroup;
+			children = (
+				7C842AB820E218A500368876 /* CopoooDBManager.h */,
+				7C842AB920E218A500368876 /* CopoooDBManager.m */,
+				7C842ABB20E21B3D00368876 /* CopoooDBDataModel.h */,
+				7C842ABC20E21B3D00368876 /* CopoooDBDataModel.m */,
+			);
+			path = "数据库";
+			sourceTree = "<group>";
+		};
 		7CB0CA1C1F419230006EECB5 /* SDWebImage */ = {
 			isa = PBXGroup;
 			children = (
@@ -2112,6 +2163,7 @@
 		810E121A1D64369F00650EA5 /* 辅助类 */ = {
 			isa = PBXGroup;
 			children = (
+				7C842AA620E2177500368876 /* fmdb */,
 				7C57537D205B4F3700314B88 /* WechatSDK1.8.2 */,
 				7C5A30E31FE0B56200C140D7 /* SGQRCode */,
 				7C614EFA1FC7BB09002861A8 /* LaunchIntroduction */,
@@ -2240,6 +2292,7 @@
 			children = (
 				8149A18C1DA8E07F00984EE1 /* copooo.entitlements */,
 				7C53867320803D0000209F55 /* guidong.cer */,
+				7C842AB720E217FD00368876 /* 数据库 */,
 				810830761D79579F0039FDE9 /* dataModle */,
 				810E121A1D64369F00650EA5 /* 辅助类 */,
 				815448AC1D62F647003814F7 /* 登录 */,
@@ -3541,6 +3594,7 @@
 				7CB0CA491F419230006EECB5 /* NSData+ImageContentType.m in Sources */,
 				7C9F1CD71F43F34E008D0A4C /* ElectricUserPointTrendDataModel.m in Sources */,
 				7C55C7A81F395665007CA376 /* UseDeductionVoucherTableViewCell.m in Sources */,
+				7C842AB220E2177500368876 /* FMDatabase.m in Sources */,
 				8109F1301D65A28200CBC75F /* PersonalInformationTableViewCell2.m in Sources */,
 				7C2862351F3AA2880033D7F5 /* SignView.m in Sources */,
 				815A23461D90CE2B00BDA13E /* JGPayPassWordView3.m in Sources */,
@@ -3636,7 +3690,9 @@
 				81EAE67E1DD0236C00C6A615 /* MJRefreshNormalHeader.m in Sources */,
 				8173B2A81E2F10E7003BC177 /* ChoseElectricityCardViewController.m in Sources */,
 				8105BBB11D7EB9F400232C71 /* PGIndexBannerSubiew.m in Sources */,
+				7C842AB420E2177500368876 /* FMDatabasePool.m in Sources */,
 				815867201E3737770057A1F6 /* XZMRefreshNormalHeader.m in Sources */,
+				7C842AB320E2177500368876 /* FMDatabaseAdditions.m in Sources */,
 				812BE4421D66B7BB00047DFE /* IQTextView.m in Sources */,
 				81F430B61D81537700DAD2F8 /* ElectricityFeeDisplay.m in Sources */,
 				81159E811D61AF4C00431EA9 /* main.m in Sources */,
@@ -3670,6 +3726,7 @@
 				812BE43E1D66B7BB00047DFE /* IQUIViewController+Additions.m in Sources */,
 				8114B1411D7418F000D67D5E /* AFAutoPurgingImageCache.m in Sources */,
 				7CFEC3181F31B2A6000ACB42 /* ChangeIntegralViewController.m in Sources */,
+				7C842ABA20E218A500368876 /* CopoooDBManager.m in Sources */,
 				8114B1401D7418F000D67D5E /* AFURLSessionManager.m in Sources */,
 				8109F11F1D65967A00CBC75F /* SafeCenterTableViewCell.m in Sources */,
 				8158671C1E3737770057A1F6 /* XZMRefreshGifFooter.m in Sources */,
@@ -3687,6 +3744,7 @@
 				816006111F15C14A0051932B /* ElectricityAdviceView.m in Sources */,
 				812BE43A1D66B7BB00047DFE /* IQNSArray+Sort.m in Sources */,
 				7C55C7A31F3954D0007CA376 /* UseDeductionVoucherViewController.m in Sources */,
+				7C842AB520E2177500368876 /* FMDatabaseQueue.m in Sources */,
 				816005E11F15C0960051932B /* WYPieSector.m in Sources */,
 				816005E41F15C0960051932B /* JHLineChart.m in Sources */,
 				812BE4471D66B7BB00047DFE /* IQUIView+IQKeyboardToolbar.m in Sources */,
@@ -3696,10 +3754,12 @@
 				816006151F15C14A0051932B /* QuarterChartView.m in Sources */,
 				7C9F1CE01F4439AF008D0A4C /* ElectricUserMonthTrendDataModel.m in Sources */,
 				81EAE67B1DD0236C00C6A615 /* MJRefreshBackNormalFooter.m in Sources */,
+				7C842AB620E2177500368876 /* FMResultSet.m in Sources */,
 				7C6821391F70A8900005C782 /* MyWebViewController.m in Sources */,
 				81EAE6731DD0236C00C6A615 /* MJRefreshBackFooter.m in Sources */,
 				815867211E3737770057A1F6 /* XZMRefreshConst.m in Sources */,
 				8114B1421D7418F000D67D5E /* AFImageDownloader.m in Sources */,
+				7C842ABD20E21B3D00368876 /* CopoooDBDataModel.m in Sources */,
 				7C5A31101FE0D35700C140D7 /* InviteRegistrationTableViewCell.m in Sources */,
 				8114B1491D7418F000D67D5E /* UIWebView+AFNetworking.m in Sources */,
 				7C7713061F38495B00F708A3 /* PayElectricityFeeView.m in Sources */,
