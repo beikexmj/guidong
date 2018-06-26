@@ -26,6 +26,7 @@
 #import "MyQRCodeViewController.h"
 #import "InvitedRegistrationViewController.h"
 #import "MJRefresh.h"
+#import "FileManagerViewController.h"
 @interface PersonalCenterViewController ()<CAAnimationDelegate,UIScrollViewDelegate>
 {
     NSArray *iconArray;
@@ -245,6 +246,13 @@
         {
             AccountDetailViewController *page = [[AccountDetailViewController alloc]init];
             [self.navigationController pushViewController:page animated:YES];
+        }
+            break;
+        case 80:
+        {
+            FileManagerViewController *vc = [[FileManagerViewController alloc] initWithNibName:NSStringFromClass([FileManagerViewController class])
+                                                                                        bundle:[NSBundle mainBundle]];
+            [self.navigationController pushViewController:vc animated:YES];
         }
             break;
         default:

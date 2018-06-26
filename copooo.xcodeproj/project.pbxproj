@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5FEA1E8D20E2194C00219D53 /* FileManagerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FEA1E8B20E2194C00219D53 /* FileManagerViewController.m */; };
+		5FEA1E8E20E2194C00219D53 /* FileManagerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5FEA1E8C20E2194C00219D53 /* FileManagerViewController.xib */; };
 		7C1887181FFF160900E45B9A /* InviteRankingDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1887171FFF160900E45B9A /* InviteRankingDataModel.m */; };
 		7C18871B1FFF29CC00E45B9A /* InvitedRegistrationDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C18871A1FFF29CC00E45B9A /* InvitedRegistrationDataModel.m */; };
 		7C233AEF1F34099B0078D50E /* IntegrationDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C233AED1F34099B0078D50E /* IntegrationDetailsViewController.m */; };
@@ -465,6 +467,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5FEA1E8A20E2194C00219D53 /* FileManagerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FileManagerViewController.h; sourceTree = "<group>"; };
+		5FEA1E8B20E2194C00219D53 /* FileManagerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FileManagerViewController.m; sourceTree = "<group>"; };
+		5FEA1E8C20E2194C00219D53 /* FileManagerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FileManagerViewController.xib; sourceTree = "<group>"; };
 		7C1425521F4D1B69000E14E3 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		7C1835BF206A3E66001F831F /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		7C1887161FFF160900E45B9A /* InviteRankingDataModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InviteRankingDataModel.h; sourceTree = "<group>"; };
@@ -1366,6 +1371,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5FEA1E8920E2192500219D53 /* 文件管理 */ = {
+			isa = PBXGroup;
+			children = (
+				5FEA1E8A20E2194C00219D53 /* FileManagerViewController.h */,
+				5FEA1E8B20E2194C00219D53 /* FileManagerViewController.m */,
+				5FEA1E8C20E2194C00219D53 /* FileManagerViewController.xib */,
+			);
+			path = "文件管理";
+			sourceTree = "<group>";
+		};
 		7C1887151FFF157500E45B9A /* model */ = {
 			isa = PBXGroup;
 			children = (
@@ -2557,6 +2572,7 @@
 		815448C31D630078003814F7 /* 个人中心 */ = {
 			isa = PBXGroup;
 			children = (
+				5FEA1E8920E2192500219D53 /* 文件管理 */,
 				7C5A30FA1FE0C58A00C140D7 /* 邀请注册 */,
 				7CF683E21FDFBF2B00A5D829 /* 我的二维码 */,
 				7C6821351F70A86A0005C782 /* webView */,
@@ -3342,6 +3358,7 @@
 				8109F1111D65534700CBC75F /* PersonalInformationViewController.xib in Resources */,
 				8149FA521E02340B0061BC40 /* RechargeRecordViewController.xib in Resources */,
 				815448BF1D62F747003814F7 /* HomePageViewController.xib in Resources */,
+				5FEA1E8E20E2194C00219D53 /* FileManagerViewController.xib in Resources */,
 				8136A9A61E5E7A9F000A18AD /* ElectricityFeeDisplayChartViewController.xib in Resources */,
 				814299231D87DB51001888A6 /* HistoryBillListViewController.xib in Resources */,
 				8113F88A1D88E64E00BD0E9A /* NoElectricityCardView.xib in Resources */,
@@ -3606,6 +3623,7 @@
 				81C3666D1D86B56200CAB353 /* BalanceRechargeSubView.m in Sources */,
 				815465F61DCB2BFB0057339E /* ElectricityBuyRecordDataModel.m in Sources */,
 				8109F1421D65A60800CBC75F /* ModifyEmailViewController.m in Sources */,
+				5FEA1E8D20E2194C00219D53 /* FileManagerViewController.m in Sources */,
 				816005E01F15C0960051932B /* WYPieChartView.m in Sources */,
 				8158671E1E3737770057A1F6 /* XZMRefreshGifHeader.m in Sources */,
 				7CB0CA4E1F419230006EECB5 /* SDWebImageDecoder.m in Sources */,
