@@ -658,7 +658,7 @@
 //        NSPredicate *pred3 = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", CT_NUM];
 //        BOOL isMatch3 = [pred3 evaluateWithObject:mobile];
         
-        NSPredicate *pred4 = [NSPredicate predicateWithFormat:@"SELF MATCHES %@",@"^1[3,4,5,7,8]\\d{9}$"];
+        NSPredicate *pred4 = [NSPredicate predicateWithFormat:@"SELF MATCHES %@",@"^1\\d{10}$"];
         BOOL isMatch4 = [pred4 evaluateWithObject:mobile];
         
         if (isMatch4) {
