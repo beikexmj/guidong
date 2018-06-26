@@ -54,7 +54,7 @@ static NSString *dbPath = nil;
         NSMutableArray *arr = [NSMutableArray array];
         while (s.next) {
             CopoooDBDataModel *model = [[CopoooDBDataModel alloc] init];
-            model.usreId = [s stringForColumn:@"usreId"] ? [s stringForColumn:@"usreId"] : @"";
+            model.userId = [s stringForColumn:@"userId"] ? [s stringForColumn:@"userId"] : @"";
             model.name = [s stringForColumn:@"name"] ? [s stringForColumn:@"name"] : @"";
             model.time = [s longLongIntForColumn:@"time"];
             model.type = [s intForColumn:@"type"];
@@ -93,7 +93,7 @@ static NSString *dbPath = nil;
     FMDatabase *db = [FMDatabase databaseWithPath:dbPath];
     if ([db open]) {
         NSString *insertSql = [NSString stringWithFormat:@"INSERT INTO '%@' ('userId','name','time','type') VALUES (?,?,?,?)", KCopoooDBTable];
-        [db executeUpdate:insertSql, model.usreId, model.name, @(model.time),@(model.type)];
+        [db executeUpdate:insertSql, model.userId, model.name, @(model.time),@(model.type)];
         [db close];
     }
 }
