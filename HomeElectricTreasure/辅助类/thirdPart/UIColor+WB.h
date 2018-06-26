@@ -28,4 +28,6 @@
  *  @return UIColor类型
  */
 + (UIColor *)colorWithHex:(long)hexColor alpha:(float)opacity;
+
+- (UIImage *)toImage;
 @end
