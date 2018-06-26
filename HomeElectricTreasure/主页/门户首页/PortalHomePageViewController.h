@@ -7,15 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "YZDisplayViewController.h"
 
-@interface PortalHomePageViewController : UIViewController
-@property (weak, nonatomic) IBOutlet UIButton *guidongNews;
-@property (weak, nonatomic) IBOutlet UIButton *elecRules;
-@property (weak, nonatomic) IBOutlet UIButton *pubicNews;
-@property (weak, nonatomic) IBOutlet UIButton *helps;
-@property (weak, nonatomic) IBOutlet UIScrollView *myScrollView;
-- (IBAction)btnClick:(id)sender;
+@interface PortalHomePageViewController : YZDisplayViewController
 @property (weak, nonatomic) IBOutlet UIButton *navTitle;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *navHight;
-
 @end

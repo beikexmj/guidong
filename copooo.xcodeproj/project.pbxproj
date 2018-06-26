@@ -89,6 +89,12 @@
 		7C842AB620E2177500368876 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C842AB120E2177500368876 /* FMResultSet.m */; };
 		7C842ABA20E218A500368876 /* CopoooDBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C842AB920E218A500368876 /* CopoooDBManager.m */; };
 		7C842ABD20E21B3D00368876 /* CopoooDBDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C842ABC20E21B3D00368876 /* CopoooDBDataModel.m */; };
+		7C842ACC20E22DE100368876 /* UIView+Frame.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C842AC420E22DE000368876 /* UIView+Frame.m */; };
+		7C842ACD20E22DE100368876 /* YZDisplayTitleLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C842AC620E22DE000368876 /* YZDisplayTitleLabel.m */; };
+		7C842ACE20E22DE100368876 /* YZDisplayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C842AC820E22DE000368876 /* YZDisplayViewController.m */; };
+		7C842ACF20E22DE100368876 /* YZFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C842ACB20E22DE000368876 /* YZFlowLayout.m */; };
+		7C842AD620E232CD00368876 /* HColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C842AD520E232CC00368876 /* HColor.m */; };
+		7C842AD920E2336400368876 /* ProtalHomePageSubVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C842AD820E2336400368876 /* ProtalHomePageSubVC.m */; };
 		7C9F1CD71F43F34E008D0A4C /* ElectricUserPointTrendDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C9F1CD61F43F34E008D0A4C /* ElectricUserPointTrendDataModel.m */; };
 		7C9F1CDA1F4411E3008D0A4C /* ElectricUserQueryOtherByDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C9F1CD91F4411E3008D0A4C /* ElectricUserQueryOtherByDataModel.m */; };
 		7C9F1CDD1F44289D008D0A4C /* ElectricUserRankingDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C9F1CDC1F44289D008D0A4C /* ElectricUserRankingDataModel.m */; };
@@ -615,6 +621,19 @@
 		7C842AB920E218A500368876 /* CopoooDBManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CopoooDBManager.m; sourceTree = "<group>"; };
 		7C842ABB20E21B3D00368876 /* CopoooDBDataModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CopoooDBDataModel.h; sourceTree = "<group>"; };
 		7C842ABC20E21B3D00368876 /* CopoooDBDataModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CopoooDBDataModel.m; sourceTree = "<group>"; };
+		7C842AC320E22DE000368876 /* UIView+Frame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Frame.h"; sourceTree = "<group>"; };
+		7C842AC420E22DE000368876 /* UIView+Frame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Frame.m"; sourceTree = "<group>"; };
+		7C842AC520E22DE000368876 /* YZDisplayTitleLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YZDisplayTitleLabel.h; sourceTree = "<group>"; };
+		7C842AC620E22DE000368876 /* YZDisplayTitleLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YZDisplayTitleLabel.m; sourceTree = "<group>"; };
+		7C842AC720E22DE000368876 /* YZDisplayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YZDisplayViewController.h; sourceTree = "<group>"; };
+		7C842AC820E22DE000368876 /* YZDisplayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YZDisplayViewController.m; sourceTree = "<group>"; };
+		7C842AC920E22DE000368876 /* YZDisplayViewHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YZDisplayViewHeader.h; sourceTree = "<group>"; };
+		7C842ACA20E22DE000368876 /* YZFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YZFlowLayout.h; sourceTree = "<group>"; };
+		7C842ACB20E22DE000368876 /* YZFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YZFlowLayout.m; sourceTree = "<group>"; };
+		7C842AD420E232CC00368876 /* HColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HColor.h; sourceTree = "<group>"; };
+		7C842AD520E232CC00368876 /* HColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HColor.m; sourceTree = "<group>"; };
+		7C842AD720E2336400368876 /* ProtalHomePageSubVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProtalHomePageSubVC.h; sourceTree = "<group>"; };
+		7C842AD820E2336400368876 /* ProtalHomePageSubVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProtalHomePageSubVC.m; sourceTree = "<group>"; };
 		7C9F1CD51F43F34E008D0A4C /* ElectricUserPointTrendDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ElectricUserPointTrendDataModel.h; sourceTree = "<group>"; };
 		7C9F1CD61F43F34E008D0A4C /* ElectricUserPointTrendDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ElectricUserPointTrendDataModel.m; sourceTree = "<group>"; };
 		7C9F1CD81F4411E3008D0A4C /* ElectricUserQueryOtherByDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ElectricUserQueryOtherByDataModel.h; sourceTree = "<group>"; };
@@ -1650,6 +1669,8 @@
 				7CB3305C1FCB9E80003E9964 /* PortalHomePageDetailViewController.h */,
 				7CB3305D1FCB9E80003E9964 /* PortalHomePageDetailViewController.m */,
 				7CB3305E1FCB9E80003E9964 /* PortalHomePageDetailViewController.xib */,
+				7C842AD720E2336400368876 /* ProtalHomePageSubVC.h */,
+				7C842AD820E2336400368876 /* ProtalHomePageSubVC.m */,
 			);
 			path = "门户首页";
 			sourceTree = "<group>";
@@ -1691,6 +1712,31 @@
 				7C842ABC20E21B3D00368876 /* CopoooDBDataModel.m */,
 			);
 			path = "数据库";
+			sourceTree = "<group>";
+		};
+		7C842AC220E22DE000368876 /* YZDisplayViewController */ = {
+			isa = PBXGroup;
+			children = (
+				7C842AC320E22DE000368876 /* UIView+Frame.h */,
+				7C842AC420E22DE000368876 /* UIView+Frame.m */,
+				7C842AC520E22DE000368876 /* YZDisplayTitleLabel.h */,
+				7C842AC620E22DE000368876 /* YZDisplayTitleLabel.m */,
+				7C842AC720E22DE000368876 /* YZDisplayViewController.h */,
+				7C842AC820E22DE000368876 /* YZDisplayViewController.m */,
+				7C842AC920E22DE000368876 /* YZDisplayViewHeader.h */,
+				7C842ACA20E22DE000368876 /* YZFlowLayout.h */,
+				7C842ACB20E22DE000368876 /* YZFlowLayout.m */,
+			);
+			path = YZDisplayViewController;
+			sourceTree = "<group>";
+		};
+		7C842AD320E232CC00368876 /* HColor */ = {
+			isa = PBXGroup;
+			children = (
+				7C842AD420E232CC00368876 /* HColor.h */,
+				7C842AD520E232CC00368876 /* HColor.m */,
+			);
+			path = HColor;
 			sourceTree = "<group>";
 		};
 		7CB0CA1C1F419230006EECB5 /* SDWebImage */ = {
@@ -2178,6 +2224,8 @@
 		810E121A1D64369F00650EA5 /* 辅助类 */ = {
 			isa = PBXGroup;
 			children = (
+				7C842AD320E232CC00368876 /* HColor */,
+				7C842AC220E22DE000368876 /* YZDisplayViewController */,
 				7C842AA620E2177500368876 /* fmdb */,
 				7C57537D205B4F3700314B88 /* WechatSDK1.8.2 */,
 				7C5A30E31FE0B56200C140D7 /* SGQRCode */,
@@ -3507,6 +3555,7 @@
 				816005D81F15C0960051932B /* WYLineChartCalculator.m in Sources */,
 				812BE4401D66B7BB00047DFE /* IQKeyboardManager.m in Sources */,
 				81E1643F1D80071000EE45C8 /* ElectricityFeeDisplayBackView.m in Sources */,
+				7C842ACF20E22DE100368876 /* YZFlowLayout.m in Sources */,
 				8109F11A1D6553AA00CBC75F /* BalanceRechargeViewController.m in Sources */,
 				812BE43B1D66B7BB00047DFE /* IQUIScrollView+Additions.m in Sources */,
 				7CB0CA4A1F419230006EECB5 /* NSImage+WebCache.m in Sources */,
@@ -3522,12 +3571,14 @@
 				812BE43F1D66B7BB00047DFE /* IQUIWindow+Hierarchy.m in Sources */,
 				81F2C8D51D77DB7D004AF5FB /* MJPropertyKey.m in Sources */,
 				8160060D1F15C1490051932B /* PricingMethodView.m in Sources */,
+				7C842AD920E2336400368876 /* ProtalHomePageSubVC.m in Sources */,
 				815867221E3737770057A1F6 /* UIView+XZMFrame.m in Sources */,
 				81EAE67A1DD0236C00C6A615 /* MJRefreshBackGifFooter.m in Sources */,
 				8142992C1D87ED0C001888A6 /* JGPayPassWordView.m in Sources */,
 				815CC3CF1DBF3F460083EF71 /* ElectricityBuyRecordViewController.m in Sources */,
 				81F2C8D41D77DB7D004AF5FB /* MJProperty.m in Sources */,
 				816005E71F15C11E0051932B /* UIColor+WB.m in Sources */,
+				7C842ACE20E22DE100368876 /* YZDisplayViewController.m in Sources */,
 				81EAE6791DD0236C00C6A615 /* MJRefreshAutoStateFooter.m in Sources */,
 				7C5A30F71FE0B56300C140D7 /* SGQRCodeHelperTool.m in Sources */,
 				810830381D7949A50039FDE9 /* NSDataEx.m in Sources */,
@@ -3570,6 +3621,7 @@
 				7CB0CA181F418235006EECB5 /* MyPointDetailDataModel.m in Sources */,
 				816005DC1F15C0960051932B /* WYPieCenterCircle.m in Sources */,
 				811B69331D7D59F2009E4E39 /* ModifyPaymentPasswordFirstStepViewController.m in Sources */,
+				7C842ACD20E22DE100368876 /* YZDisplayTitleLabel.m in Sources */,
 				7C233AFF1F345E5B0078D50E /* TicketCenterViewController.m in Sources */,
 				815448CA1D630768003814F7 /* PersonalCenterTableViewCell.m in Sources */,
 				813B02EA1DC0A5A000AF0D20 /* UIView+Frame.m in Sources */,
@@ -3732,6 +3784,7 @@
 				810A86751D79617B00DDC7CD /* MBProgressHUD.m in Sources */,
 				810830421D7949F20039FDE9 /* StorageUserInfromation.m in Sources */,
 				813B02E61DC0A5A000AF0D20 /* LGLCalenderSubModel.m in Sources */,
+				7C842ACC20E22DE100368876 /* UIView+Frame.m in Sources */,
 				8142991D1D87DB37001888A6 /* PayElectricityFeeViewController.m in Sources */,
 				7C2862461F3AE3850033D7F5 /* YXMonthView.m in Sources */,
 				7C5A30F31FE0B56300C140D7 /* UIImage+ImageSize.m in Sources */,
@@ -3748,6 +3801,7 @@
 				8114B1401D7418F000D67D5E /* AFURLSessionManager.m in Sources */,
 				8109F11F1D65967A00CBC75F /* SafeCenterTableViewCell.m in Sources */,
 				8158671C1E3737770057A1F6 /* XZMRefreshGifFooter.m in Sources */,
+				7C842AD620E232CD00368876 /* HColor.m in Sources */,
 				7C5A310A1FE0CF3100C140D7 /* InviteRegistrationRankTableViewCell.m in Sources */,
 				7C5A31041FE0C9DD00C140D7 /* InviteRegistrationRankViewController.m in Sources */,
 				7CB0CA551F419230006EECB5 /* UIImage+MultiFormat.m in Sources */,

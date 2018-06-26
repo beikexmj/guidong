@@ -547,101 +547,18 @@
                                     <constraint firstAttribute="height" constant="64" id="jfP-Og-RcW"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uy4-An-iwy">
-                                <rect key="frame" x="0.0" y="64" width="375" height="43"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="news_top_bac" translatesAutoresizingMaskIntoConstraints="NO" id="GcF-Qd-E5b">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
-                                    </imageView>
-                                    <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="76r-if-w0z">
-                                        <rect key="frame" x="0.0" y="0.0" width="94" height="43"/>
-                                        <state key="normal" title="桂东新闻">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="btnClick:" destination="Wkc-BH-L1t" eventType="touchUpInside" id="4ra-mn-E2Z"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" tag="40" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gEa-80-mgs">
-                                        <rect key="frame" x="281.5" y="0.0" width="93.5" height="43"/>
-                                        <state key="normal" title="帮助">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="btnClick:" destination="Wkc-BH-L1t" eventType="touchUpInside" id="MN3-Wp-AaB"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" tag="20" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HpD-Zz-xpL">
-                                        <rect key="frame" x="94" y="0.0" width="93.5" height="43"/>
-                                        <state key="normal" title="电价法规">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="btnClick:" destination="Wkc-BH-L1t" eventType="touchUpInside" id="ktd-4m-641"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" tag="30" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="10n-0l-IJI">
-                                        <rect key="frame" x="187.5" y="0.0" width="94" height="43"/>
-                                        <state key="normal" title="公共信息">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="btnClick:" destination="Wkc-BH-L1t" eventType="touchUpInside" id="qZR-2r-yh3"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="gEa-80-mgs" secondAttribute="trailing" id="2vs-BK-Nmt"/>
-                                    <constraint firstItem="gEa-80-mgs" firstAttribute="width" secondItem="76r-if-w0z" secondAttribute="width" id="5RW-cf-Mf7"/>
-                                    <constraint firstAttribute="bottom" secondItem="HpD-Zz-xpL" secondAttribute="bottom" id="6CG-1v-ACP"/>
-                                    <constraint firstItem="gEa-80-mgs" firstAttribute="top" secondItem="uy4-An-iwy" secondAttribute="top" id="7TX-v8-Ulk"/>
-                                    <constraint firstAttribute="bottom" secondItem="gEa-80-mgs" secondAttribute="bottom" id="8fq-Xi-2aS"/>
-                                    <constraint firstAttribute="trailing" secondItem="GcF-Qd-E5b" secondAttribute="trailing" id="A5d-Gc-XeL"/>
-                                    <constraint firstItem="76r-if-w0z" firstAttribute="leading" secondItem="uy4-An-iwy" secondAttribute="leading" id="Czx-AU-9DS"/>
-                                    <constraint firstItem="HpD-Zz-xpL" firstAttribute="leading" secondItem="76r-if-w0z" secondAttribute="trailing" id="F8L-18-Du8"/>
-                                    <constraint firstItem="10n-0l-IJI" firstAttribute="leading" secondItem="HpD-Zz-xpL" secondAttribute="trailing" id="I8O-nm-lEb"/>
-                                    <constraint firstItem="76r-if-w0z" firstAttribute="top" secondItem="uy4-An-iwy" secondAttribute="top" id="SSa-c9-u6i"/>
-                                    <constraint firstAttribute="bottom" secondItem="GcF-Qd-E5b" secondAttribute="bottom" id="Sqr-lp-zTc"/>
-                                    <constraint firstItem="GcF-Qd-E5b" firstAttribute="top" secondItem="uy4-An-iwy" secondAttribute="top" id="Yqu-1L-SEO"/>
-                                    <constraint firstItem="HpD-Zz-xpL" firstAttribute="width" secondItem="76r-if-w0z" secondAttribute="width" id="ZXT-6m-Qc9"/>
-                                    <constraint firstItem="10n-0l-IJI" firstAttribute="top" secondItem="uy4-An-iwy" secondAttribute="top" id="dCt-ne-DLr"/>
-                                    <constraint firstItem="GcF-Qd-E5b" firstAttribute="leading" secondItem="uy4-An-iwy" secondAttribute="leading" id="jAc-NG-1kU"/>
-                                    <constraint firstAttribute="bottom" secondItem="10n-0l-IJI" secondAttribute="bottom" id="kit-5f-7Hj"/>
-                                    <constraint firstAttribute="height" constant="43" id="lcW-u5-HYV"/>
-                                    <constraint firstAttribute="bottom" secondItem="76r-if-w0z" secondAttribute="bottom" id="loO-kT-nJD"/>
-                                    <constraint firstItem="gEa-80-mgs" firstAttribute="leading" secondItem="10n-0l-IJI" secondAttribute="trailing" id="mLm-3W-xJM"/>
-                                    <constraint firstItem="HpD-Zz-xpL" firstAttribute="top" secondItem="uy4-An-iwy" secondAttribute="top" id="oCA-S3-4rm"/>
-                                    <constraint firstItem="10n-0l-IJI" firstAttribute="width" secondItem="76r-if-w0z" secondAttribute="width" id="x8J-iJ-GMQ"/>
-                                </constraints>
-                            </view>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mum-Y5-VH0">
-                                <rect key="frame" x="0.0" y="107" width="375" height="511"/>
-                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="uy4-An-iwy" firstAttribute="top" secondItem="ewP-rT-beo" secondAttribute="bottom" id="4wh-oj-aLF"/>
-                            <constraint firstAttribute="trailing" secondItem="Mum-Y5-VH0" secondAttribute="trailing" id="CSe-5a-yNc"/>
                             <constraint firstItem="ewP-rT-beo" firstAttribute="leading" secondItem="xwe-TP-wks" secondAttribute="leading" id="LPx-4g-NNC"/>
                             <constraint firstItem="ewP-rT-beo" firstAttribute="top" secondItem="xwe-TP-wks" secondAttribute="top" id="dan-Pp-207"/>
-                            <constraint firstItem="uy4-An-iwy" firstAttribute="leading" secondItem="xwe-TP-wks" secondAttribute="leading" id="eo2-EM-4Yz"/>
-                            <constraint firstItem="qnO-nM-ok9" firstAttribute="top" secondItem="Mum-Y5-VH0" secondAttribute="bottom" id="fla-Ry-Mhc"/>
-                            <constraint firstAttribute="trailing" secondItem="uy4-An-iwy" secondAttribute="trailing" id="iop-Ec-hsb"/>
-                            <constraint firstItem="Mum-Y5-VH0" firstAttribute="top" secondItem="uy4-An-iwy" secondAttribute="bottom" id="pXC-if-IVj"/>
                             <constraint firstAttribute="trailing" secondItem="ewP-rT-beo" secondAttribute="trailing" id="u4q-8k-Ktc"/>
-                            <constraint firstItem="Mum-Y5-VH0" firstAttribute="leading" secondItem="xwe-TP-wks" secondAttribute="leading" id="wt5-FU-JDc"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="门户首页" image="icon_news2" id="KUY-7V-ApZ"/>
                     <connections>
-                        <outlet property="elecRules" destination="HpD-Zz-xpL" id="nse-aK-x4s"/>
-                        <outlet property="guidongNews" destination="76r-if-w0z" id="Z1t-nt-qhr"/>
-                        <outlet property="helps" destination="gEa-80-mgs" id="zwo-Ff-Bxc"/>
-                        <outlet property="myScrollView" destination="Mum-Y5-VH0" id="1l7-nI-3l9"/>
                         <outlet property="navHight" destination="jfP-Og-RcW" id="hCL-Th-9lh"/>
                         <outlet property="navTitle" destination="9uS-Nd-kKw" id="sVi-2h-kkT"/>
-                        <outlet property="pubicNews" destination="10n-0l-IJI" id="SFj-Tb-fqk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0GP-5H-BM6" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -813,7 +730,6 @@
         <image name="icon_news2" width="20" height="24"/>
         <image name="icon_person2" width="21" height="25"/>
         <image name="logo2" width="25" height="25"/>
-        <image name="news_top_bac" width="375" height="43"/>
         <image name="per_bac" width="375" height="135"/>
         <image name="per_bac1" width="375" height="190"/>
         <image name="per_head" width="70" height="70"/>
