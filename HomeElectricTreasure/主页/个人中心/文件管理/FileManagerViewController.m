@@ -57,7 +57,7 @@ static NSString *const kFileManagerTableViewCell = @"com.copticomm.cell.filemana
 
 - (void)showMutipleEditing
 {
-    self.tableView.contentInset = UIEdgeInsetsMake(0, 0, self.deleteButton.height, 0);
+    self.tableView.contentInset = UIEdgeInsetsMake(0, 0, self.deleteButton.frame.size.height, 0);
     [UIView animateWithDuration:0.25 animations:^{
         self.deleteTopConstraint.constant = -48;
         [self.view layoutIfNeeded];
