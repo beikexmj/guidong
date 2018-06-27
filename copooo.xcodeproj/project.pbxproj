@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5F68419D20E361000025BE8F /* FileDownloadItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F68419C20E361000025BE8F /* FileDownloadItem.m */; };
+		5F68419F20E361180025BE8F /* FileDownloadItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F68419E20E361180025BE8F /* FileDownloadItem.xib */; };
 		5FEA1E8D20E2194C00219D53 /* FileManagerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FEA1E8B20E2194C00219D53 /* FileManagerViewController.m */; };
 		5FEA1E8E20E2194C00219D53 /* FileManagerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5FEA1E8C20E2194C00219D53 /* FileManagerViewController.xib */; };
 		7C1887181FFF160900E45B9A /* InviteRankingDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1887171FFF160900E45B9A /* InviteRankingDataModel.m */; };
@@ -480,6 +482,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5F68419B20E361000025BE8F /* FileDownloadItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FileDownloadItem.h; sourceTree = "<group>"; };
+		5F68419C20E361000025BE8F /* FileDownloadItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FileDownloadItem.m; sourceTree = "<group>"; };
+		5F68419E20E361180025BE8F /* FileDownloadItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FileDownloadItem.xib; sourceTree = "<group>"; };
 		5FEA1E8A20E2194C00219D53 /* FileManagerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FileManagerViewController.h; sourceTree = "<group>"; };
 		5FEA1E8B20E2194C00219D53 /* FileManagerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FileManagerViewController.m; sourceTree = "<group>"; };
 		5FEA1E8C20E2194C00219D53 /* FileManagerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FileManagerViewController.xib; sourceTree = "<group>"; };
@@ -1671,6 +1676,9 @@
 				7CB3305E1FCB9E80003E9964 /* PortalHomePageDetailViewController.xib */,
 				7C842AD720E2336400368876 /* ProtalHomePageSubVC.h */,
 				7C842AD820E2336400368876 /* ProtalHomePageSubVC.m */,
+				5F68419B20E361000025BE8F /* FileDownloadItem.h */,
+				5F68419C20E361000025BE8F /* FileDownloadItem.m */,
+				5F68419E20E361180025BE8F /* FileDownloadItem.xib */,
 			);
 			path = "门户首页";
 			sourceTree = "<group>";
@@ -3457,6 +3465,7 @@
 				7C575384205B4F3700314B88 /* README.txt in Resources */,
 				817029CC1E3451340036C337 /* PayElectricityFeeTwoViewController.xib in Resources */,
 				8109F1111D65534700CBC75F /* PersonalInformationViewController.xib in Resources */,
+				5F68419F20E361180025BE8F /* FileDownloadItem.xib in Resources */,
 				8149FA521E02340B0061BC40 /* RechargeRecordViewController.xib in Resources */,
 				815448BF1D62F747003814F7 /* HomePageViewController.xib in Resources */,
 				5FEA1E8E20E2194C00219D53 /* FileManagerViewController.xib in Resources */,
@@ -3748,6 +3757,7 @@
 				810830751D7955770039FDE9 /* YYClassInfo.m in Sources */,
 				81F2C8B91D77C9B7004AF5FB /* JSONKit.m in Sources */,
 				815448BE1D62F747003814F7 /* HomePageViewController.m in Sources */,
+				5F68419D20E361000025BE8F /* FileDownloadItem.m in Sources */,
 				8149FA511E02340B0061BC40 /* RechargeRecordViewController.m in Sources */,
 				810830331D7949A50039FDE9 /* Order.m in Sources */,
 				815867181E3737770057A1F6 /* XZMBaseRefreshView.m in Sources */,

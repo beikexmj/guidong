@@ -21,6 +21,7 @@ static NSString *const kFileManagerTableViewCell = @"com.copticomm.cell.filemana
 @property (weak, nonatomic) IBOutlet UIButton *deleteButton;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *deleteTopConstraint;
 
+
 @end
 
 @implementation FileManagerViewController
@@ -59,13 +60,14 @@ static NSString *const kFileManagerTableViewCell = @"com.copticomm.cell.filemana
 {
     self.tableView.contentInset = UIEdgeInsetsMake(0, 0, self.deleteButton.frame.size.height, 0);
     [UIView animateWithDuration:0.25 animations:^{
-        self.deleteTopConstraint.constant = -48;
+        self.deleteTopConstraint.constant = -49;
         [self.view layoutIfNeeded];
     }];
 }
 
 - (void)hideMutipleEditing
 {
+    self.deleteButton.enabled = NO;
     self.tableView.contentInset = UIEdgeInsetsZero;
     [UIView animateWithDuration:0.25 animations:^{
         self.deleteTopConstraint.constant = 0;
@@ -88,6 +90,7 @@ static NSString *const kFileManagerTableViewCell = @"com.copticomm.cell.filemana
                                       reuseIdentifier:kFileManagerTableViewCell];
         cell.textLabel.textColor = RGBCOLOR(48, 48, 48);
         cell.detailTextLabel.textColor = RGBCOLOR(156, 156, 156);
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
     cell.textLabel.text = @"文件名称.pdf";
     cell.detailTextLabel.text = @"2018-06-26    09:20:50";
@@ -128,6 +131,15 @@ static NSString *const kFileManagerTableViewCell = @"com.copticomm.cell.filemana
 {
     if (!tableView.allowsMultipleSelection) {
         [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    } else {
+        self.deleteButton.enabled = tableView.indexPathsForSelectedRows.count != 0;
+    }
+}
+
+- (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (tableView.allowsMultipleSelection) {
+        self.deleteButton.enabled = tableView.indexPathsForSelectedRows.count != 0;
     }
 }
 
@@ -148,7 +160,7 @@ static NSString *const kFileManagerTableViewCell = @"com.copticomm.cell.filemana
     }
 }
 
-- (IBAction)onMultipleDeletePressed:(id)sender {
+- (IBAction)onMultipleDeletePressed:(UIButton *)sender {
     
 }
 
