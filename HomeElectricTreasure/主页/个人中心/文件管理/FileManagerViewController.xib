@@ -12,7 +12,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FileManagerViewController">
             <connections>
                 <outlet property="deleteButton" destination="cfc-td-eXw" id="ep7-qL-3g1"/>
-                <outlet property="deleteTopConstraint" destination="Hjh-3U-F5i" id="Imw-Hw-cgO"/>
+                <outlet property="deleteTopConstraint" destination="hhK-aN-4I2" id="W7H-Ou-YE0"/>
                 <outlet property="navigationBackgroundHeight" destination="zDn-sI-D3Y" id="GfZ-VW-Rbc"/>
                 <outlet property="tableView" destination="mg1-jI-aLX" id="HfX-Tt-fEC"/>
                 <outlet property="titleLabel" destination="T9P-Yr-dSy" id="XEy-ZN-KpB"/>
@@ -84,29 +84,42 @@
                         <constraint firstAttribute="height" constant="64" id="zDn-sI-D3Y"/>
                     </constraints>
                 </view>
-                <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cfc-td-eXw">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qNs-6d-WgI" userLabel="Bottom Container">
                     <rect key="frame" x="0.0" y="667" width="375" height="49"/>
-                    <color key="backgroundColor" red="0.79916556248133774" green="0.79916556248133774" blue="0.79916556248133774" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cfc-td-eXw">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                            <color key="backgroundColor" red="0.79916556248133774" green="0.79916556248133774" blue="0.79916556248133774" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="49" id="ysh-b5-sw6"/>
+                            </constraints>
+                            <state key="normal" image="my_icon_delete"/>
+                            <connections>
+                                <action selector="onMultipleDeletePressed:" destination="-1" eventType="touchUpInside" id="P0d-DP-YAs"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="49" id="ysh-b5-sw6"/>
+                        <constraint firstAttribute="trailing" secondItem="cfc-td-eXw" secondAttribute="trailing" id="1ZW-5f-y0z"/>
+                        <constraint firstItem="cfc-td-eXw" firstAttribute="top" secondItem="qNs-6d-WgI" secondAttribute="top" id="Eh4-HV-ZiA"/>
+                        <constraint firstItem="cfc-td-eXw" firstAttribute="leading" secondItem="qNs-6d-WgI" secondAttribute="leading" id="Y5m-Fa-P5d"/>
+                        <constraint firstAttribute="bottom" secondItem="cfc-td-eXw" secondAttribute="bottom" id="ki3-tk-fqY"/>
+                        <constraint firstAttribute="height" constant="49" id="qJC-kR-lvC"/>
                     </constraints>
-                    <state key="normal" image="my_icon_delete"/>
-                    <connections>
-                        <action selector="onMultipleDeletePressed:" destination="-1" eventType="touchUpInside" id="P0d-DP-YAs"/>
-                    </connections>
-                </button>
+                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="mg1-jI-aLX" secondAttribute="trailing" id="6uC-uZ-B5X"/>
-                <constraint firstItem="cfc-td-eXw" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="bottom" id="Hjh-3U-F5i"/>
+                <constraint firstAttribute="trailing" secondItem="qNs-6d-WgI" secondAttribute="trailing" id="7gB-B7-fye"/>
                 <constraint firstAttribute="bottom" secondItem="mg1-jI-aLX" secondAttribute="bottom" id="Iji-ES-cq5"/>
-                <constraint firstItem="cfc-td-eXw" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Q2V-4t-U7K"/>
                 <constraint firstAttribute="trailing" secondItem="t9q-OC-htX" secondAttribute="trailing" id="bDs-Za-lLG"/>
+                <constraint firstItem="qNs-6d-WgI" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="g4E-As-vHf"/>
                 <constraint firstItem="mg1-jI-aLX" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="hAx-3U-WX4"/>
+                <constraint firstItem="qNs-6d-WgI" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="bottom" id="hhK-aN-4I2"/>
                 <constraint firstItem="t9q-OC-htX" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="icR-Bu-SEt"/>
                 <constraint firstItem="mg1-jI-aLX" firstAttribute="top" secondItem="t9q-OC-htX" secondAttribute="bottom" id="moR-TC-ceh"/>
-                <constraint firstAttribute="trailing" secondItem="cfc-td-eXw" secondAttribute="trailing" id="qsf-LJ-igj"/>
                 <constraint firstItem="t9q-OC-htX" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="ysD-LY-908"/>
             </constraints>
         </view>
