@@ -60,7 +60,7 @@ static NSString *const kFileManagerTableViewCell = @"com.copticomm.cell.filemana
 {
     self.tableView.contentInset = UIEdgeInsetsMake(0, 0, self.deleteButton.height, 0);
     [UIView animateWithDuration:0.25 animations:^{
-        self.deleteTopConstraint.constant = -48;
+        self.deleteTopConstraint.constant = -49;
         [self.view layoutIfNeeded];
     }];
 }

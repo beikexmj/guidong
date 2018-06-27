@@ -8,8 +8,11 @@
 
 #import "PortalHomePageDetailViewController.h"
 #import <WebKit/WebKit.h>
+#import "FileDownloadItem.h"
+#import "UIView+Frame.h"
 @interface PortalHomePageDetailViewController ()<WKUIDelegate,WKNavigationDelegate>
 @property (nonatomic,strong) WKWebView *myWebView;
+@property (nonatomic, strong) UIView *downloadItemContainer;
 @end
 
 @implementation PortalHomePageDetailViewController
@@ -22,6 +25,7 @@
     }
     [self addUIData];
     // Do any additional setup after loading the view from its nib.
+    [self setupDownloadItems];
 }
 - (void)addUIData{
     UIView * myView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 100)];
@@ -86,6 +90,19 @@
     _myWebView.navigationDelegate = self;
     [self.myScrollView addSubview:_myWebView];
     [_myWebView loadHTMLString:_onceList.content baseURL:nil];
+    
+}
+
+- (void)setupDownloadItems
+{
+    FileDownloadItem *item1 = [[FileDownloadItem alloc] initWithFrame:CGRectMake(0, 0, self.downloadItemContainer.width, 35)];
+    FileDownloadItem *item2 = [[FileDownloadItem alloc] initWithFrame:CGRectMake(0, item1.y + item1.height + 8, self.downloadItemContainer.width, 35)];
+    FileDownloadItem *item3 = [[FileDownloadItem alloc] initWithFrame:CGRectMake(0, item2.y + item2.height + 8, self.downloadItemContainer.width, 35)];
+    self.downloadItemContainer.height = item3.y + item3.height + 8;
+    
+    [self.downloadItemContainer addSubview:item1];
+    [self.downloadItemContainer addSubview:item2];
+    [self.downloadItemContainer addSubview:item3];
 }
 
 - (void)webView:(WKWebView *)webView didFinishNavigation:(null_unspecified WKNavigation *)navigation {
@@ -95,7 +112,11 @@
                       NSNumber *height = result;
                       // do with the height
                       _myWebView.frame = CGRectMake(0, _myWebView.frame.origin.y, SCREEN_WIDTH, [height floatValue]);
-                      self.myScrollView.contentSize = CGSizeMake(SCREEN_WIDTH, _myWebView.frame.origin.y + [height floatValue]);
+                      if (![self.myScrollView.subviews containsObject:self.downloadItemContainer]) {
+                          [self.myScrollView addSubview:self.downloadItemContainer];
+                      }
+                      self.downloadItemContainer.y = _myWebView.frame.origin.y + [height floatValue];
+                      self.myScrollView.contentSize = CGSizeMake(SCREEN_WIDTH, self.downloadItemContainer.y + self.downloadItemContainer.height);
                       
                   }
               }];
@@ -119,4 +140,15 @@
 - (IBAction)backBtnClick:(id)sender {
     [self.navigationController popViewControllerAnimated:YES];
 }
+
+#pragma mark - getter
+
+- (UIView *)downloadItemContainer
+{
+    if (!_downloadItemContainer) {
+        _downloadItemContainer = [[UIView alloc] initWithFrame:CGRectMake(10, 0, SCREEN_WIDTH - 20, 0)];
+    }
+    return _downloadItemContainer;
+}
+
 @end
