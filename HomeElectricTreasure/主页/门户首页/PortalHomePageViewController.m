@@ -10,10 +10,9 @@
 #import "AppDelegate.h"
 #import "ServiceAndNoticeViewController.h"
 #import "ProtalHomePageSubVC.h"
+#import "ProtalHomePageClassDataModel.h"
 @interface PortalHomePageViewController ()
-
-
-
+@property (nonatomic,strong)NSArray<ProtalHomePageClassFormList *> *data;
 @end
 
 @implementation PortalHomePageViewController
@@ -38,23 +37,23 @@
     [self setUpTitleScale:^(CGFloat *titleScale) {
         *titleScale = 1.2;
     }];
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        
-        // 移除之前所有子控制器
-        [self.childViewControllers makeObjectsPerformSelector:@selector(removeFromParentViewController)];
-        
-        // 把对应标题保存到控制器中，并且成为子控制器，才能刷新
-        // 添加所有新的子控制器
-        [self setUpAllViewController];
-        
-        self.selectIndex = 0;
-        
-        // 注意：必须先确定子控制器
-        [self refreshDisplay];
-        
-    });
+//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//
+//        // 移除之前所有子控制器
+//        [self.childViewControllers makeObjectsPerformSelector:@selector(removeFromParentViewController)];
+//
+//        // 把对应标题保存到控制器中，并且成为子控制器，才能刷新
+//        // 添加所有新的子控制器
+//        [self setUpAllViewController];
+//
+//        self.selectIndex = 0;
+//
+//        // 注意：必须先确定子控制器
+//        [self refreshDisplay];
+//
+//    });
     
-    
+    [self fetchData];
     
     AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     if (delegate.comfromFlag == 3 &&[StorageUserInfromation storageUserInformation].token) {
@@ -68,44 +67,44 @@
 // 添加所有子控制器
 - (void)setUpAllViewController
 {
-    for (int i = 0; i<3; i++) {
+    for (int i = 0; i<_data.count; i++) {
         ProtalHomePageSubVC *wordVc1 = [[ProtalHomePageSubVC alloc] init];
-        wordVc1.newsType = i;
-        wordVc1.title = @[@"桂东新闻",@"电价法规",@"公共新闻"][i];
+        wordVc1.newsType = _data[i].code.integerValue;
+        wordVc1.title = _data[i].name;
         [self addChildViewController:wordVc1];
     }
 }
-//- (void)fetchData{
-//    NSString *url = @"property/headlineHome/HeadlineTypeList";
-//   
-//    [ZTHttpTool postWithUrl:url param:@{} success:^(id responseObj) {
-//        NSString * str = [JGEncrypt encryptWithContent:[responseObj mj_JSONObject][@"data"] type:kCCDecrypt key:KEY];
-//        NSLog(@"%@",[DictToJson dictionaryWithJsonString:str]);
-//        ProtalHomePageDataModel *protalData = [ProtalHomePageDataModel mj_objectWithKeyValues:str];
-//        if (data.rcode == 0) {
-//            _headerTitleArr = data.data;
-//            if (_headerTitleArr.count) {
-//                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-//                    
-//                    // 移除之前所有子控制器
-//                    [self.childViewControllers makeObjectsPerformSelector:@selector(removeFromParentViewController)];
-//                    
-//                    // 把对应标题保存到控制器中，并且成为子控制器，才能刷新
-//                    // 添加所有新的子控制器
-//                    [self setUpAllViewController];
-//                    
-//                    self.selectIndex = 0;
-//                    
-//                    // 注意：必须先确定子控制器
-//                    [self refreshDisplay];
-//                    
-//                });
-//            }
-//        }
-//    } failure:^(NSError *error) {
-//        
-//    }];
-//}
+- (void)fetchData{
+    NSString *url = @"news/getNewsType";
+   
+    [ZTHttpTool postWithUrl:url param:@{} success:^(id responseObj) {
+        NSString * str = [JGEncrypt encryptWithContent:[responseObj mj_JSONObject][@"data"] type:kCCDecrypt key:KEY];
+        NSLog(@"%@",[DictToJson dictionaryWithJsonString:str]);
+        ProtalHomePageClassDataModel *data = [ProtalHomePageClassDataModel mj_objectWithKeyValues:str];
+        if (data.rcode == 0) {
+            _data = data.form.list;
+            if (_data.count) {
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                    
+                    // 移除之前所有子控制器
+                    [self.childViewControllers makeObjectsPerformSelector:@selector(removeFromParentViewController)];
+                    
+                    // 把对应标题保存到控制器中，并且成为子控制器，才能刷新
+                    // 添加所有新的子控制器
+                    [self setUpAllViewController];
+                    
+                    self.selectIndex = 0;
+                    
+                    // 注意：必须先确定子控制器
+                    [self refreshDisplay];
+                    
+                });
+            }
+        }
+    } failure:^(NSError *error) {
+        
+    }];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

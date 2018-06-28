@@ -49,33 +49,34 @@
     segTitle.font = [UIFont systemFontOfSize:15.0];
     segTitle.textColor = RGBCOLOR(192, 192, 192);
     
-    switch ([_onceList.newsType integerValue]) {
-        case 0:
-            {
-            segTitle.text = @"桂东电力";
-            }
-            break;
-        case 1:
-        {
-            segTitle.text = @"电价法规";
-
-        }
-            break;
-        case 2:
-        {
-            segTitle.text = @"公共信息";
-
-        }
-            break;
-        case 3:
-        {
-            segTitle.text = @"帮助";
-
-        }
-            break;
-        default:
-            break;
-    }
+//    switch ([_onceList.newsType integerValue]) {
+//        case 0:
+//            {
+//            segTitle.text = @"桂东电力";
+//            }
+//            break;
+//        case 1:
+//        {
+//            segTitle.text = @"电价法规";
+//
+//        }
+//            break;
+//        case 2:
+//        {
+//            segTitle.text = @"公共信息";
+//
+//        }
+//            break;
+//        case 3:
+//        {
+//            segTitle.text = @"帮助";
+//
+//        }
+//            break;
+//        default:
+//            break;
+//    }
+    segTitle.text = _typeName;
     [myView addSubview:segTitle];
     
     UILabel *time = [[UILabel alloc]initWithFrame:CGRectMake(115, height +30, 120, 21)];

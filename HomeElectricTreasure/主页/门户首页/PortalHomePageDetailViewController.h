@@ -14,5 +14,6 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *navHight;
 
 @property (weak, nonatomic) IBOutlet UIScrollView *myScrollView;
+@property (nonatomic,copy)NSString *typeName;
 - (IBAction)backBtnClick:(id)sender;
 @end

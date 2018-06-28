@@ -213,6 +213,7 @@
    
     PortalHomePageDetailViewController * page = [[PortalHomePageDetailViewController alloc]init];
     page.onceList = onceList;
+    page.typeName = self.title;
     [self.navigationController pushViewController:page animated:YES];
 }
 - (void)didReceiveMemoryWarning {

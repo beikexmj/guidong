@@ -35,6 +35,7 @@
 		7C2862441F3AE3850033D7F5 /* YXDayCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C28623E1F3AE3850033D7F5 /* YXDayCell.m */; };
 		7C2862451F3AE3850033D7F5 /* YXDayCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C28623F1F3AE3850033D7F5 /* YXDayCell.xib */; };
 		7C2862461F3AE3850033D7F5 /* YXMonthView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C2862411F3AE3850033D7F5 /* YXMonthView.m */; };
+		7C4E09F220E4755E004032AE /* ProtalHomePageClassDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C4E09F120E4755E004032AE /* ProtalHomePageClassDataModel.m */; };
 		7C520B691FBBC89000A7C666 /* NSString+Replace.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C520B681FBBC89000A7C666 /* NSString+Replace.m */; };
 		7C53867420803D1E00209F55 /* guidong.cer in Resources */ = {isa = PBXBuildFile; fileRef = 7C53867320803D0000209F55 /* guidong.cer */; };
 		7C55C7A31F3954D0007CA376 /* UseDeductionVoucherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C55C7A11F3954D0007CA376 /* UseDeductionVoucherViewController.m */; };
@@ -529,6 +530,8 @@
 		7C28623F1F3AE3850033D7F5 /* YXDayCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YXDayCell.xib; sourceTree = "<group>"; };
 		7C2862401F3AE3850033D7F5 /* YXMonthView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YXMonthView.h; sourceTree = "<group>"; };
 		7C2862411F3AE3850033D7F5 /* YXMonthView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YXMonthView.m; sourceTree = "<group>"; };
+		7C4E09F020E4755E004032AE /* ProtalHomePageClassDataModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ProtalHomePageClassDataModel.h; sourceTree = "<group>"; };
+		7C4E09F120E4755E004032AE /* ProtalHomePageClassDataModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ProtalHomePageClassDataModel.m; sourceTree = "<group>"; };
 		7C520B671FBBC89000A7C666 /* NSString+Replace.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+Replace.h"; sourceTree = "<group>"; };
 		7C520B681FBBC89000A7C666 /* NSString+Replace.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+Replace.m"; sourceTree = "<group>"; };
 		7C53867320803D0000209F55 /* guidong.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = guidong.cer; sourceTree = "<group>"; };
@@ -1635,6 +1638,8 @@
 				7C614F001FC7FD79002861A8 /* ProtalHomePageDataModel.m */,
 				7C581B851FD1252A00681CC0 /* ProtalHomePageHelpDataModel.h */,
 				7C581B861FD1252A00681CC0 /* ProtalHomePageHelpDataModel.m */,
+				7C4E09F020E4755E004032AE /* ProtalHomePageClassDataModel.h */,
+				7C4E09F120E4755E004032AE /* ProtalHomePageClassDataModel.m */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -3593,6 +3598,7 @@
 				810830381D7949A50039FDE9 /* NSDataEx.m in Sources */,
 				7CB0CA4B1F419230006EECB5 /* SDImageCache.m in Sources */,
 				8114B1461D7418F000D67D5E /* UIImageView+AFNetworking.m in Sources */,
+				7C4E09F220E4755E004032AE /* ProtalHomePageClassDataModel.m in Sources */,
 				810E12131D6403A800650EA5 /* ElectricityFeePaymentViewController.m in Sources */,
 				81D8E51E1E5D3DA300644FC1 /* NewElectricityFeePaymentDisplayUpCollectionViewCell.m in Sources */,
 				81EAE6781DD0236C00C6A615 /* MJRefreshAutoNormalFooter.m in Sources */,
