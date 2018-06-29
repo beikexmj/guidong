@@ -7,11 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "NewsAttatchmentModel.h"
+#import "CircleProgressBar.h"
 
 @interface FileDownloadItem : UIView
 
 @property (weak, nonatomic) IBOutlet UILabel *fileNameLabel;
 @property (weak, nonatomic) IBOutlet UIButton *operationButton;
 @property (weak, nonatomic) IBOutlet UIImageView *downloadStateView;
+@property (nonatomic, strong) NewsAttatchmentFormItem *item;
+@property (weak, nonatomic) IBOutlet CircleProgressBar *progressView;
 
 @end

@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-@class CopoooDBDataModel;
+#import "CopoooDBDataModel.h"
 @interface CopoooDBManager : NSObject
 +(void)initDB;//初始化db
 /**

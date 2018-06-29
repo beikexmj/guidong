@@ -10,6 +10,7 @@
 #import <WebKit/WebKit.h>
 #import "FileDownloadItem.h"
 #import "UIView+Frame.h"
+#import "NewsAttatchmentModel.h"
 
 @interface PortalHomePageDetailViewController ()<WKUIDelegate,WKNavigationDelegate>
 @property (nonatomic,strong) WKWebView *myWebView;
@@ -26,7 +27,6 @@
     }
     [self addUIData];
     // Do any additional setup after loading the view from its nib.
-    [self setupDownloadItems];
 }
 - (void)addUIData{
     UIView * myView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 100)];
@@ -95,31 +95,60 @@
     
 }
 
-- (void)setupDownloadItems
+- (void)loadFileItems
 {
-    FileDownloadItem *item1 = [[FileDownloadItem alloc] initWithFrame:CGRectMake(0, 0, self.downloadItemContainer.yz_width, 35)];
-    FileDownloadItem *item2 = [[FileDownloadItem alloc] initWithFrame:CGRectMake(0, item1.yz_y + item1.yz_height + 8, self.downloadItemContainer.yz_width, 35)];
-    FileDownloadItem *item3 = [[FileDownloadItem alloc] initWithFrame:CGRectMake(0, item2.yz_y + item2.yz_height + 8, self.downloadItemContainer.yz_width, 35)];
-    self.downloadItemContainer.yz_height = item3.yz_y + item3.yz_height + 8;
-    
-    [self.downloadItemContainer addSubview:item1];
-    [self.downloadItemContainer addSubview:item2];
-    [self.downloadItemContainer addSubview:item3];
+    NSMutableDictionary *params = @{}.mutableCopy;
+    if (self.onceList.ids) {
+        [params setObject:@"e50b3cc566b1476a90630a97f898b0b6" forKey:@"newsId"];
+    }
+    __weak typeof(self) weakSelf = self;
+    [ZTHttpTool postWithUrl:@"/appdev/news/getNewsAttachment"
+                      param:params
+                    success:^(id responseObj) {
+                        NSString * str = [JGEncrypt encryptWithContent:[responseObj mj_JSONObject][@"data"] type:kCCDecrypt key:KEY];
+                        __strong typeof(weakSelf) strongSelf = weakSelf;
+                        NewsAttatchmentModel *model = [NewsAttatchmentModel mj_objectWithKeyValues:str];
+                        [strongSelf renderFileItemWithNewsModel:model];
+                    }
+                    failure:^(NSError *error) {
+                        NSLog(@"%@", error.localizedDescription);
+                    }];
+}
+
+- (void)renderFileItemWithNewsModel:(NewsAttatchmentModel *)model
+{
+    __block FileDownloadItem *lastItem;
+    CGFloat itemHeight = 35.0;
+    CGFloat itemMargin = 8.0;
+    __weak typeof(self) weakSelf = self;
+    [model.form.list enumerateObjectsUsingBlock:^(NewsAttatchmentFormItem * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        FileDownloadItem *item = [[FileDownloadItem alloc] initWithFrame:CGRectMake(0, (itemHeight + itemMargin) * idx, strongSelf.downloadItemContainer.yz_width, itemHeight)];
+        item.item = obj;
+        [strongSelf.downloadItemContainer addSubview:item];
+        lastItem = item;
+    }];
+    if (lastItem) {
+        self.downloadItemContainer.yz_height = CGRectGetMaxY(lastItem.frame) + itemMargin;
+    }
+    self.myScrollView.contentSize = CGSizeMake(SCREEN_WIDTH, CGRectGetMaxY(self.downloadItemContainer.frame));
 }
 
 - (void)webView:(WKWebView *)webView didFinishNavigation:(null_unspecified WKNavigation *)navigation {
+    __weak typeof(self) weakSelf = self;
     [webView evaluateJavaScript:@"Math.max(document.body.scrollHeight, document.body.offsetHeight, document.documentElement.clientHeight, document.documentElement.scrollHeight, document.documentElement.offsetHeight)"
               completionHandler:^(id _Nullable result, NSError * _Nullable error) {
+                  __strong typeof(weakSelf) strongSelf = weakSelf;
                   if (!error) {
                       NSNumber *height = result;
                       // do with the height
-                      _myWebView.frame = CGRectMake(0, _myWebView.frame.origin.y, SCREEN_WIDTH, [height floatValue]);
-                      if (![self.myScrollView.subviews containsObject:self.downloadItemContainer]) {
-                          [self.myScrollView addSubview:self.downloadItemContainer];
+                      strongSelf.myWebView.frame = CGRectMake(0, _myWebView.frame.origin.y, SCREEN_WIDTH, [height floatValue]);
+                      if (![strongSelf.myScrollView.subviews containsObject:strongSelf.downloadItemContainer]) {
+                          [strongSelf.myScrollView addSubview:strongSelf.downloadItemContainer];
                       }
-                      self.downloadItemContainer.yz_y = _myWebView.frame.origin.y + [height floatValue];
-                      self.myScrollView.contentSize = CGSizeMake(SCREEN_WIDTH, self.downloadItemContainer.yz_y + self.downloadItemContainer.yz_height);
-                      
+                      strongSelf.downloadItemContainer.yz_y = _myWebView.frame.origin.y + [height floatValue];
+                      strongSelf.myScrollView.contentSize = CGSizeMake(SCREEN_WIDTH, strongSelf.downloadItemContainer.yz_y + strongSelf.downloadItemContainer.yz_height);
+                      [strongSelf loadFileItems];
                   }
               }];
 }

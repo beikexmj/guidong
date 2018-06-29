@@ -8,9 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
+extern NSInteger FileTypePDF;
+extern NSInteger FileTypeImage;
+extern NSInteger FileTypeVideo;
+
 @interface CopoooDBDataModel : NSObject
 @property (nonatomic,copy)NSString *userId;
 @property (nonatomic,copy)NSString *name;
 @property (nonatomic,assign)long long time;
-@property (nonatomic,assign)NSInteger type;//1 ==pdf 1 == 图片 3 == 视频
+@property (nonatomic,assign)NSInteger type;//1 ==pdf 2 == 图片 3 == 视频
 @end

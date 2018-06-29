@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		5F68419D20E361000025BE8F /* FileDownloadItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F68419C20E361000025BE8F /* FileDownloadItem.m */; };
 		5F68419F20E361180025BE8F /* FileDownloadItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F68419E20E361180025BE8F /* FileDownloadItem.xib */; };
+		5FBE991820E61CC4009CBBBD /* NewsAttatchmentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FBE991720E61CC4009CBBBD /* NewsAttatchmentModel.m */; };
+		5FBE991C20E62D0A009CBBBD /* CircleProgressBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FBE991B20E62D0A009CBBBD /* CircleProgressBar.m */; };
 		5FEA1E8D20E2194C00219D53 /* FileManagerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FEA1E8B20E2194C00219D53 /* FileManagerViewController.m */; };
 		5FEA1E8E20E2194C00219D53 /* FileManagerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5FEA1E8C20E2194C00219D53 /* FileManagerViewController.xib */; };
 		7C1887181FFF160900E45B9A /* InviteRankingDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1887171FFF160900E45B9A /* InviteRankingDataModel.m */; };
@@ -486,6 +488,10 @@
 		5F68419B20E361000025BE8F /* FileDownloadItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FileDownloadItem.h; sourceTree = "<group>"; };
 		5F68419C20E361000025BE8F /* FileDownloadItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FileDownloadItem.m; sourceTree = "<group>"; };
 		5F68419E20E361180025BE8F /* FileDownloadItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FileDownloadItem.xib; sourceTree = "<group>"; };
+		5FBE991620E61CC4009CBBBD /* NewsAttatchmentModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewsAttatchmentModel.h; sourceTree = "<group>"; };
+		5FBE991720E61CC4009CBBBD /* NewsAttatchmentModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewsAttatchmentModel.m; sourceTree = "<group>"; };
+		5FBE991A20E62D0A009CBBBD /* CircleProgressBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CircleProgressBar.h; sourceTree = "<group>"; };
+		5FBE991B20E62D0A009CBBBD /* CircleProgressBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CircleProgressBar.m; sourceTree = "<group>"; };
 		5FEA1E8A20E2194C00219D53 /* FileManagerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FileManagerViewController.h; sourceTree = "<group>"; };
 		5FEA1E8B20E2194C00219D53 /* FileManagerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FileManagerViewController.m; sourceTree = "<group>"; };
 		5FEA1E8C20E2194C00219D53 /* FileManagerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FileManagerViewController.xib; sourceTree = "<group>"; };
@@ -1420,6 +1426,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5FBE991920E62CFC009CBBBD /* CircleProgressBar */ = {
+			isa = PBXGroup;
+			children = (
+				5FBE991A20E62D0A009CBBBD /* CircleProgressBar.h */,
+				5FBE991B20E62D0A009CBBBD /* CircleProgressBar.m */,
+			);
+			path = CircleProgressBar;
+			sourceTree = "<group>";
+		};
 		5FEA1E8920E2192500219D53 /* 文件管理 */ = {
 			isa = PBXGroup;
 			children = (
@@ -1640,6 +1655,8 @@
 				7C581B861FD1252A00681CC0 /* ProtalHomePageHelpDataModel.m */,
 				7C4E09F020E4755E004032AE /* ProtalHomePageClassDataModel.h */,
 				7C4E09F120E4755E004032AE /* ProtalHomePageClassDataModel.m */,
+				5FBE991620E61CC4009CBBBD /* NewsAttatchmentModel.h */,
+				5FBE991720E61CC4009CBBBD /* NewsAttatchmentModel.m */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -2237,6 +2254,7 @@
 		810E121A1D64369F00650EA5 /* 辅助类 */ = {
 			isa = PBXGroup;
 			children = (
+				5FBE991920E62CFC009CBBBD /* CircleProgressBar */,
 				7C842AD320E232CC00368876 /* HColor */,
 				7C842AC220E22DE000368876 /* YZDisplayViewController */,
 				7C842AA620E2177500368876 /* fmdb */,
@@ -3622,6 +3640,7 @@
 				7C64A71E1FE269360077581E /* RankRuleViewController.m in Sources */,
 				81EAE6741DD0236C00C6A615 /* MJRefreshComponent.m in Sources */,
 				7C5A30FE1FE0C5D800C140D7 /* InvitedRegistrationViewController.m in Sources */,
+				5FBE991820E61CC4009CBBBD /* NewsAttatchmentModel.m in Sources */,
 				7C9F1CDA1F4411E3008D0A4C /* ElectricUserQueryOtherByDataModel.m in Sources */,
 				816005D61F15C0960051932B /* WYLineChartReferenceLineView.m in Sources */,
 				814A95211E4C0B0400D047AB /* ElectricityCardHistoryListBillDataModel.m in Sources */,
@@ -3670,6 +3689,7 @@
 				811F0EF71DB8575200A31FDE /* AboutViewController.m in Sources */,
 				7C6D7FBD1F42D87F00E128C6 /* VoucherListDataModel.m in Sources */,
 				816006131F15C14A0051932B /* TrendHeaderView.m in Sources */,
+				5FBE991C20E62D0A009CBBBD /* CircleProgressBar.m in Sources */,
 				7C615F7D1F6B7211007305F2 /* UICollectionView+WFEmpty.m in Sources */,
 				81159E871D61AF4C00431EA9 /* ViewController.m in Sources */,
 				818E6C171E445E9E00DEB475 /* ElectricityRecordViewController.m in Sources */,

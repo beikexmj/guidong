@@ -8,6 +8,10 @@
 
 #import "CopoooDBDataModel.h"
 
+NSInteger FileTypePDF = 1;
+NSInteger FileTypeImage = 2;
+NSInteger FileTypeVideo = 3;
+
 @implementation CopoooDBDataModel
 
 @end
