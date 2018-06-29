@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -35,6 +36,9 @@
                         <action selector="onAction:" destination="ecx-yE-z1i" eventType="touchUpInside" id="zgc-t8-nGp"/>
                     </connections>
                 </button>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="news_pdf_download" translatesAutoresizingMaskIntoConstraints="NO" id="3h7-Hk-Yf7">
+                    <rect key="frame" x="27" y="336" width="12" height="12"/>
+                </imageView>
             </subviews>
             <color key="backgroundColor" red="0.96470588235294119" green="0.96470588235294119" blue="0.96470588235294119" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
@@ -43,9 +47,12 @@
                 <constraint firstItem="wAC-cw-lSr" firstAttribute="leading" secondItem="ecx-yE-z1i" secondAttribute="leading" constant="10" id="KrZ-d7-Bou"/>
                 <constraint firstItem="wAC-cw-lSr" firstAttribute="centerY" secondItem="ecx-yE-z1i" secondAttribute="centerY" id="Qs4-mk-mt0"/>
                 <constraint firstItem="j86-nR-NJg" firstAttribute="leading" secondItem="wAC-cw-lSr" secondAttribute="trailing" constant="15" id="YFz-Sg-SNc"/>
+                <constraint firstItem="3h7-Hk-Yf7" firstAttribute="centerX" secondItem="wAC-cw-lSr" secondAttribute="trailing" constant="-2" id="evd-aT-bbF"/>
+                <constraint firstItem="3h7-Hk-Yf7" firstAttribute="bottom" secondItem="wAC-cw-lSr" secondAttribute="bottom" constant="2" id="fwD-5k-SR0"/>
                 <constraint firstItem="gmd-8B-WOB" firstAttribute="centerY" secondItem="ecx-yE-z1i" secondAttribute="centerY" id="tCY-P1-d1I"/>
             </constraints>
             <connections>
+                <outlet property="downloadStateView" destination="3h7-Hk-Yf7" id="ZBj-fu-xm1"/>
                 <outlet property="fileNameLabel" destination="j86-nR-NJg" id="lBC-I0-Jf5"/>
                 <outlet property="operationButton" destination="gmd-8B-WOB" id="vVv-r6-SiD"/>
             </connections>
@@ -55,5 +62,6 @@
     <resources>
         <image name="news_icon_download" width="22" height="21"/>
         <image name="news_pdf" width="25" height="25"/>
+        <image name="news_pdf_download" width="12" height="12"/>
     </resources>
 </document>

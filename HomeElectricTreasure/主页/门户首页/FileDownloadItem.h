@@ -12,5 +12,6 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *fileNameLabel;
 @property (weak, nonatomic) IBOutlet UIButton *operationButton;
+@property (weak, nonatomic) IBOutlet UIImageView *downloadStateView;
 
 @end
