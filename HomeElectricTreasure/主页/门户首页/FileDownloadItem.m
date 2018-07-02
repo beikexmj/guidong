@@ -84,6 +84,7 @@
                   } else {
                       [strongSelf switchOperationStateWithFileExist:NO];
                       strongSelf.downloadStateView.hidden = YES;
+                      [MBProgressHUD showError:@"下载失败，无网络连接"];
                   }
               }];
 }
