@@ -21,14 +21,10 @@
     if (self) {
         self.frame = frame;
         [self.operationButton setTitleColor:[UIColor colorWithHex:0xc0c0c0] forState:UIControlStateNormal];
-        [self.operationButton setTitle:nil forState:UIControlStateNormal];
-        [self.operationButton setImage:[UIImage imageNamed:@"news_icon_download"] forState:UIControlStateNormal];
-        [self.operationButton setTitle:@"去查看" forState:UIControlStateSelected];
-        [self.operationButton setImage:nil forState:UIControlStateSelected];
         self.operationButton.titleLabel.font = [UIFont systemFontOfSize:14];
         
         [self.progressView setHintAttributedGenerationBlock:^NSAttributedString *(CGFloat progress) {
-            return [[NSAttributedString alloc] initWithString:[NSString stringWithFormat:@"%.2f%%", progress * 100]
+            return [[NSAttributedString alloc] initWithString:[NSString stringWithFormat:@"%.f%%", progress * 100]
                                                    attributes:@{NSFontAttributeName : [UIFont systemFontOfSize:12.0]}];
         }];
     }
@@ -39,9 +35,9 @@
 {
     _item = item;
     self.fileNameLabel.text = item.fileName;
-    BOOL isExist = [CopoooDBManager searchDB:[self filePathWithName:item.fileName] type:FileTypePDF];
+    BOOL isExist = [CopoooDBManager searchDB:item.fileName type:FileTypePDF];
     self.downloadStateView.hidden = !isExist;
-    self.operationButton.selected = isExist;
+    [self switchOperationStateWithFileExist:isExist];
 }
 
 - (NSString *)filePathWithName:(NSString *)name {
@@ -49,22 +45,50 @@
     return [documentPath stringByAppendingPathComponent:name];
 }
 
+- (void)switchOperationStateWithFileExist:(BOOL)isExist
+{
+    if (isExist) {
+        [self.operationButton setTitle:@"去查看" forState:UIControlStateNormal];
+        [self.operationButton setImage:nil forState:UIControlStateNormal];
+    } else {
+        [self.operationButton setImage:[UIImage imageNamed:@"news_icon_download"] forState:UIControlStateNormal];
+        [self.operationButton setTitle:nil forState:UIControlStateNormal];
+    }
+}
+
 - (void)startDownload
 {
     __weak typeof(self) weakSelf = self;
-    [ZTHttpTool getWithUrl:[NSString stringWithFormat:@"%@%@", DOWNLOAD_URL, self.item.download]
-                     param:nil
-        myDownloadProgress:^(NSProgress *progress) {
-            __strong typeof(weakSelf) strongSelf = weakSelf;
-            [strongSelf.progressView setProgress:progress.completedUnitCount / progress.totalUnitCount animated:YES];
-        }
-                   success:^(id responseObj) {
-                       __strong typeof(weakSelf) strongSelf = weakSelf;
-                       
-                   }
-                   failure:^(NSError *error) {
-                       
-                   }];
+    [ZTHttpTool downloadWithURL:[NSString stringWithFormat:@"%@%@", DOWNLOAD_URL, self.item.download]
+                     targetPath:[self filePathWithName:self.item.fileName]
+                         params:nil
+                       progress:^(float progress) {
+                           __strong typeof(weakSelf) strongSelf = weakSelf;
+                           [strongSelf.progressView setProgress:progress animated:YES];
+                       }
+              completionHandler:^(NSString * _Nullable filePath, NSError * _Nullable error) {
+                  __strong typeof(weakSelf) strongSelf = weakSelf;
+                  strongSelf.operationButton.hidden = NO;
+                  strongSelf.progressView.hidden = YES;
+                  if (filePath && !error) {
+                      [strongSelf switchOperationStateWithFileExist:YES];
+                      strongSelf.downloadStateView.hidden = NO;
+                      [strongSelf saveToDatabaseWithPath:filePath];
+                  } else {
+                      [strongSelf switchOperationStateWithFileExist:NO];
+                      strongSelf.downloadStateView.hidden = YES;
+                  }
+              }];
+}
+
+- (void)saveToDatabaseWithPath:(NSString *)filePath
+{
+    CopoooDBDataModel *model = [[CopoooDBDataModel alloc] init];
+    model.userId = [StorageUserInfromation storageUserInformation].userId;
+    model.name = self.item.fileName;
+    model.time = [[NSDate date] timeIntervalSince1970];
+    model.type = FileTypePDF;
+    [CopoooDBManager saveDB:model];
 }
 
 - (IBAction)onAction:(id)sender {

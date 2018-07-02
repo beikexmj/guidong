@@ -18,33 +18,62 @@
 
 + (void)getWithUrl:(NSString *)url param:(NSDictionary *)params myDownloadProgress:(void(^)(NSProgress *progress))myDownloadProgress success:(void (^)(id responseObj))success failure:(void(^)(NSError *error))failure{
     
-//    AFHTTPRequestOperationManager *mgr = [AFHTTPRequestOperationManager manager];
-//    [mgr GET:url parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
-//        if (success) {
-//            success(responseObject);
-//        }
-//    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-//        if (failure) {
-//            failure(error);
-//        }
-//    }];
+    //    AFHTTPRequestOperationManager *mgr = [AFHTTPRequestOperationManager manager];
+    //    [mgr GET:url parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    //        if (success) {
+    //            success(responseObject);
+    //        }
+    //    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    //        if (failure) {
+    //            failure(error);
+    //        }
+    //    }];
+    NSURLSessionConfiguration *config = [NSURLSessionConfiguration defaultSessionConfiguration];
+    AFHTTPSessionManager *manager = [[AFHTTPSessionManager alloc] initWithBaseURL:[NSURL URLWithString:DOWNLOAD_URL] sessionConfiguration:config];
+    [manager downloadTaskWithRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:url]]
+                            progress:^(NSProgress * _Nonnull downloadProgress) {
+                                
+                            } destination:^NSURL * _Nonnull(NSURL * _Nonnull targetPath, NSURLResponse * _Nonnull response) {
+                                return nil;
+                            } completionHandler:^(NSURLResponse * _Nonnull response, NSURL * _Nullable filePath, NSError * _Nullable error) {
+                                
+                            }];
+    
+}
+
++ (void)downloadWithURL:(NSString *)url targetPath:(NSString *)path params:(NSDictionary *)params progress:(void (^)(float))progress completionHandler:(void (^)(NSString * _Nullable, NSError * _Nullable))completionHandler
+{
+    progress = [progress copy];
+    completionHandler = [completionHandler copy];
+    NSURLSessionConfiguration *config = [NSURLSessionConfiguration defaultSessionConfiguration];
+    AFHTTPSessionManager *manager = [[AFHTTPSessionManager alloc] initWithBaseURL:[NSURL URLWithString:DOWNLOAD_URL] sessionConfiguration:config];
+    [[manager downloadTaskWithRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:url]]
+                            progress:^(NSProgress * _Nonnull downloadProgress) {
+                                progress ? progress(downloadProgress.completedUnitCount / downloadProgress.totalUnitCount) : nil;
+                            }
+                         destination:^NSURL * _Nonnull(NSURL * _Nonnull targetPath, NSURLResponse * _Nonnull response) {
+                             return [NSURL fileURLWithPath:path];
+                         }
+                   completionHandler:^(NSURLResponse * _Nonnull response, NSURL * _Nullable filePath, NSError * _Nullable error) {
+                       completionHandler ? completionHandler(filePath.absoluteString, error) : nil;
+                   }] resume];
 }
 
 + (void)postWithUrl:(NSString *)url param:(id)params success:(void (^)(id responseObj))success failure:(void(^)(NSError *error))failure{
-//    NSString *urlStr = [NSString stringWithFormat:@"%@%@",textUrl,url];
-//    json字符串转化为数据字典
-//    NSData *jsonData = [params dataUsingEncoding:NSUTF8StringEncoding];
-//    NSError *err;
-//    NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers error:&err];
+    //    NSString *urlStr = [NSString stringWithFormat:@"%@%@",textUrl,url];
+    //    json字符串转化为数据字典
+    //    NSData *jsonData = [params dataUsingEncoding:NSUTF8StringEncoding];
+    //    NSError *err;
+    //    NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers error:&err];
     NSString *str = [DictToJson jsonStringWithDictionary:params];
-//    NSLog(@"jsonstr:=====:%@",str);
-//    NSString *str = [params ];
-   str = [JGEncrypt encryptWithContent:str type:kCCEncrypt key:KEY];
-//    str = [AESCrypt encrypt:str password:KEY];
-     NSLog(@"加密str:=====:%@",str);
-   NSString *str2 = [JGEncrypt encryptWithContent:str type:kCCDecrypt key:KEY];
+    //    NSLog(@"jsonstr:=====:%@",str);
+    //    NSString *str = [params ];
+    str = [JGEncrypt encryptWithContent:str type:kCCEncrypt key:KEY];
+    //    str = [AESCrypt encrypt:str password:KEY];
+    NSLog(@"加密str:=====:%@",str);
+    NSString *str2 = [JGEncrypt encryptWithContent:str type:kCCDecrypt key:KEY];
     NSLog(@"解密str2:=====:%@",str2);
-
+    
     NSURL *SessionUrl = [NSURL URLWithString:BASE_URL];
     
     NSURLSessionConfiguration *config = [NSURLSessionConfiguration defaultSessionConfiguration];
@@ -59,29 +88,29 @@
     mgr.requestSerializer.timeoutInterval=60;
     StorageUserInfromation *storage = [StorageUserInfromation storageUserInformation];
     [mgr.requestSerializer setValue:storage.sessionId?storage.sessionId:@"" forHTTPHeaderField:@"cookie"];
-
+    
     [mgr POST:url parameters:
      @{@"data":str} progress:^(NSProgress * _Nonnull uploadProgress) {
-        
-    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-            success(responseObject);
-        
-            NSString * str = [JGEncrypt encryptWithContent:[responseObject mj_JSONObject][@"data"] type:kCCDecrypt key:KEY];
-            
-            if ([[DictToJson dictionaryWithJsonString:str][@"rcode"] integerValue] == -10) {
-                NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-                [defaults setValue:nil forKey:@"accountNo"];
-                AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-                LoginViewController *controller = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
-                delegate.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:controller];
-                [MBProgressHUD showError:@"登录已过期或账号已在其他终端登录" toView:controller.view];
-
-            }
-        
-        } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        
-        failure(error);
-    }];
+         
+     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+         success(responseObject);
+         
+         NSString * str = [JGEncrypt encryptWithContent:[responseObject mj_JSONObject][@"data"] type:kCCDecrypt key:KEY];
+         
+         if ([[DictToJson dictionaryWithJsonString:str][@"rcode"] integerValue] == -10) {
+             NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+             [defaults setValue:nil forKey:@"accountNo"];
+             AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+             LoginViewController *controller = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
+             delegate.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:controller];
+             [MBProgressHUD showError:@"登录已过期或账号已在其他终端登录" toView:controller.view];
+             
+         }
+         
+     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+         
+         failure(error);
+     }];
 }
 + (void)postWithUrl2:(NSString *)url param:(id)params success:(void (^)(id responseObj))success failure:(void(^)(NSError *error))failure{
     //    NSString *urlStr = [NSString stringWithFormat:@"%@%@",textUrl,url];
@@ -135,36 +164,36 @@
      {
          NSArray * array = [postImageArr objectAtIndex:0];
          NSArray * array1 = [postImageArr objectAtIndex:1];
-
+         
          // 上传 多张图片
          for(NSInteger i = 0; i < [array count]; i++) {
              NSData * picData = UIImageJPEGRepresentation([[postImageArr objectAtIndex:0] objectAtIndex: i], 1);
-            UIImage * images = [UIImage imageWithData:picData];
+             UIImage * images = [UIImage imageWithData:picData];
              while ([picData length]>1024*500) {
                  
                  picData =  UIImageJPEGRepresentation(images, 0.3);
                  if ([picData length]>1024*500) {
                      images =  [StorageUserInfromation imageCompressForWidth:images targetWidth:images.size.width*0.5];
                      picData =  UIImageJPEGRepresentation(images, 0.3);
-
+                     
                  }
              }
              NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
              formatter.dateFormat = @"yyyyMMddHHmmss";
              NSString *str = [formatter stringFromDate:[NSDate date]];
              NSString *fileName = [NSString stringWithFormat:@"%@.png", str];
-//             NSURL *filePath = [NSURL fileURLWithPath:[array objectAtIndex:i]];
+             //             NSURL *filePath = [NSURL fileURLWithPath:[array objectAtIndex:i]];
              [formData appendPartWithFileData:picData name:[array1 objectAtIndex:i] fileName:fileName mimeType:mimeType];
          }
          
      } progress:^(NSProgress * _Nonnull uploadProgress) {
-    
-        } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-            success(responseObject);
-        } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-            failure(error);
-            [MBProgressHUD showError:[NSString stringWithFormat:@"%@",error]];
-        }];
+         
+     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+         success(responseObject);
+     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+         failure(error);
+         [MBProgressHUD showError:[NSString stringWithFormat:@"%@",error]];
+     }];
     
 }
 
@@ -236,7 +265,7 @@
     NSData *certData = [NSData dataWithContentsOfFile:cerPath];
     
     // AFSSLPinningModeCertificate 使用证书验证模式
-//    AFSecurityPolicy *securityPolicy = [AFSecurityPolicy policyWithPinningMode:AFSSLPinningModeCertificate];
+    //    AFSecurityPolicy *securityPolicy = [AFSecurityPolicy policyWithPinningMode:AFSSLPinningModeCertificate];
     AFSecurityPolicy *securityPolicy = [AFSecurityPolicy policyWithPinningMode:AFSSLPinningModeCertificate withPinnedCertificates:[[NSSet alloc] initWithObjects:certData, nil]];
     
     // allowInvalidCertificates 是否允许无效证书（也就是自建的证书），默认为NO
@@ -249,7 +278,7 @@
     //如置为NO，建议自己添加对应域名的校验逻辑。
     securityPolicy.validatesDomainName = NO;
     
-//    securityPolicy.pinnedCertificates =  (NSSet *)@[certData];
+    //    securityPolicy.pinnedCertificates =  (NSSet *)@[certData];
     
     return securityPolicy;
 }

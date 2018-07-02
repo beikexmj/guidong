@@ -26,6 +26,12 @@ static char queueGroupKey;
  */
 + (void)getWithUrl:(NSString *)url param:(NSDictionary *)params myDownloadProgress:(void(^)(NSProgress *progress))myDownloadProgress success:(void (^)(id responseObj))success failure:(void(^)(NSError *error))failure;
 
++ (void)downloadWithURL:(NSString * _Nonnull )url
+             targetPath:(NSString * _Nonnull )path
+                 params:(NSDictionary * _Nullable )params
+               progress:(nullable void(^)(float progress))progress
+      completionHandler:(nullable void (^)(NSString * _Nullable filePath, NSError * _Nullable error))completionHandler;
+
 + (void)postWithUrl:(NSString *)url param:(id)params success:(void (^)(id responseObj))success failure:(void(^)(NSError *error))failure;
 + (void)sendGroupPostRequest:(BlockAction)requests success:(BlockAction)success failure:(GroupResponseFailure)failure;
 //+ (void)postWithUrl2:(NSString *)url param:(id)params success:(void (^)(id responseObj))success failure:(void(^)(NSError *error))failure;

@@ -36,7 +36,11 @@ static NSString *dbPath = nil;
     FMDatabase *db = [FMDatabase databaseWithPath:dbPath];
     if ([db open]) {
         //创建表
+#if 0
         NSString *createTable = [NSString stringWithFormat:@"CREATE TABLE  IF NOT EXISTS '%@' ('usreId' VARCHAR, 'name' VARCHAR, 'type' INTEGER, 'time' LONGLONG )", KCopoooDBTable];
+#else
+        NSString *createTable = [NSString stringWithFormat:@"CREATE TABLE  IF NOT EXISTS '%@' ('name' VARCHAR, 'type' INTEGER, 'time' LONGLONG )", KCopoooDBTable];
+#endif
         [db executeUpdate:createTable];
         [db close];
     }
@@ -92,8 +96,13 @@ static NSString *dbPath = nil;
 +(void)saveDB:(CopoooDBDataModel *)model{
     FMDatabase *db = [FMDatabase databaseWithPath:dbPath];
     if ([db open]) {
-        NSString *insertSql = [NSString stringWithFormat:@"INSERT INTO '%@' ('userId','name','time','type') VALUES (?,?,?,?)", KCopoooDBTable];
-        [db executeUpdate:insertSql, model.userId, model.name, @(model.time),@(model.type)];
+#if 0
+        NSString *insertSql = [NSString stringWithFormat:@"INSERT INTO '%@' ('userId','name','type','time') VALUES (?,?,?,?)", KCopoooDBTable];
+        [db executeUpdate:insertSql, model.userId, model.name, @(model.type),@(model.time)];
+#else
+        NSString *insertSql = [NSString stringWithFormat:@"INSERT INTO '%@' ('name','type','time') VALUES (?,?,?)", KCopoooDBTable];
+        [db executeUpdate:insertSql, model.name, @(model.type),@(model.time)];
+#endif
         [db close];
     }
 }

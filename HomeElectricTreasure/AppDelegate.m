@@ -48,6 +48,8 @@
 //AdSupport.framework
 #import "ServiceAndNoticeViewController.h"
 #import "UIView+MJExtension.h"
+#import "CopoooDBManager.h"
+
 @interface AppDelegate ()<JPUSHRegisterDelegate,WXApiDelegate>{
     UIBackgroundTaskIdentifier _bgTask;
     NSString *_registrationID;
@@ -223,6 +225,8 @@
 //    [LaunchIntroductionView sharedWithImages:@[@"引导页1",@"引导页2",@"引导页3"]];
     [LaunchIntroductionView sharedWithStoryboardName:@"Main" images:@[@"引导页1",@"引导页2",@"引导页3"]];
     [self networkStateChange];
+    
+    [CopoooDBManager initDB];
     
     return YES;
 }
