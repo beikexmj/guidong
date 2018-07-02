@@ -38,8 +38,8 @@
 - (void)setItem:(NewsAttatchmentFormItem *)item
 {
     _item = item;
-    self.fileNameLabel.text = item.fileName;
-    _isExist = [CopoooDBManager searchDB:item.fileName type:FileTypePDF];
+    self.fileNameLabel.text = item.originName;
+    _isExist = [CopoooDBManager searchDB:item.originName type:FileTypePDF];
     self.downloadStateView.hidden = !_isExist;
     [self switchOperationStateWithFileExist:_isExist];
 }
@@ -65,7 +65,7 @@
     self.isDownloading = YES;
     __weak typeof(self) weakSelf = self;
     [ZTHttpTool downloadWithURL:[NSString stringWithFormat:@"%@%@", DOWNLOAD_URL, self.item.download]
-                     targetPath:[self filePathWithName:self.item.fileName]
+                     targetPath:[self filePathWithName:self.item.originName]
                          params:nil
                        progress:^(float progress) {
                            __strong typeof(weakSelf) strongSelf = weakSelf;
@@ -92,7 +92,7 @@
 {
     CopoooDBDataModel *model = [[CopoooDBDataModel alloc] init];
     model.userId = [StorageUserInfromation storageUserInformation].userId;
-    model.name = self.item.fileName;
+    model.name = self.item.originName;
     model.time = [[NSDate date] timeIntervalSince1970];
     model.type = FileTypePDF;
     [CopoooDBManager saveDB:model];
@@ -101,7 +101,7 @@
 - (IBAction)onAction:(id)sender {
     if (_isExist) {
         FileBrowserViewController *vc = [[FileBrowserViewController alloc] init];
-        vc.fileURL = [NSURL fileURLWithPath:[self filePathWithName:self.item.fileName]];
+        vc.fileURL = [NSURL fileURLWithPath:[self filePathWithName:self.item.originName]];
         [self.viewController.navigationController pushViewController:vc animated:YES];
     } else {
         self.operationButton.hidden = YES;

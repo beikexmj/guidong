@@ -99,7 +99,7 @@
 {
     NSMutableDictionary *params = @{}.mutableCopy;
     if (self.onceList.ids) {
-        [params setObject:@"e50b3cc566b1476a90630a97f898b0b6" forKey:@"newsId"];
+        [params setObject:self.onceList.ids forKey:@"newsId"];
     }
     __weak typeof(self) weakSelf = self;
     [ZTHttpTool postWithUrl:@"/appdev/news/getNewsAttachment"
