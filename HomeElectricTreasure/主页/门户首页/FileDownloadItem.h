@@ -18,4 +18,6 @@
 @property (nonatomic, strong) NewsAttatchmentFormItem *item;
 @property (weak, nonatomic) IBOutlet CircleProgressBar *progressView;
 
+@property (nonatomic) BOOL isDownloading;
+
 @end

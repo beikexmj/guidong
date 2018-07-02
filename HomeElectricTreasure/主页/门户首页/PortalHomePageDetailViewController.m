@@ -49,33 +49,33 @@
     segTitle.font = [UIFont systemFontOfSize:15.0];
     segTitle.textColor = RGBCOLOR(192, 192, 192);
     
-//    switch ([_onceList.newsType integerValue]) {
-//        case 0:
-//            {
-//            segTitle.text = @"桂东电力";
-//            }
-//            break;
-//        case 1:
-//        {
-//            segTitle.text = @"电价法规";
-//
-//        }
-//            break;
-//        case 2:
-//        {
-//            segTitle.text = @"公共信息";
-//
-//        }
-//            break;
-//        case 3:
-//        {
-//            segTitle.text = @"帮助";
-//
-//        }
-//            break;
-//        default:
-//            break;
-//    }
+    //    switch ([_onceList.newsType integerValue]) {
+    //        case 0:
+    //            {
+    //            segTitle.text = @"桂东电力";
+    //            }
+    //            break;
+    //        case 1:
+    //        {
+    //            segTitle.text = @"电价法规";
+    //
+    //        }
+    //            break;
+    //        case 2:
+    //        {
+    //            segTitle.text = @"公共信息";
+    //
+    //        }
+    //            break;
+    //        case 3:
+    //        {
+    //            segTitle.text = @"帮助";
+    //
+    //        }
+    //            break;
+    //        default:
+    //            break;
+    //    }
     segTitle.text = _typeName;
     [myView addSubview:segTitle];
     
@@ -159,17 +159,38 @@
 }
 
 /*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+ }
+ */
 
 - (IBAction)backBtnClick:(id)sender {
-    [self.navigationController popViewControllerAnimated:YES];
+    
+    __block BOOL result = NO;
+    [self.downloadItemContainer.subviews enumerateObjectsUsingBlock:^(__kindof UIView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        if ([obj isKindOfClass:[FileDownloadItem class]]) {
+            FileDownloadItem *item = obj;
+            result = item.isDownloading;
+        }
+        if (result) {
+            *stop = YES;
+        }
+    }];
+    if (result) {
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"文件正在下载中是否退出？" preferredStyle:UIAlertControllerStyleAlert];
+        [alert addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil]];
+        __weak typeof(self) weakSelf = self;
+        [alert addAction:[UIAlertAction actionWithTitle:@"退出" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+            __strong typeof(weakSelf) strongSelf = weakSelf;
+            [strongSelf.navigationController popViewControllerAnimated:YES];
+        }]];
+    } else {
+        [self.navigationController popViewControllerAnimated:YES];
+    }
 }
 
 #pragma mark - getter

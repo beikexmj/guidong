@@ -9,6 +9,7 @@
 #import "FileManagerViewController.h"
 #import "UIColor+WB.h"
 #import "UIView+Frame.h"
+#import "CopoooDBManager.h"
 
 static NSString *const kFileManagerTableViewCell = @"com.copticomm.cell.filemanager";
 
@@ -21,7 +22,9 @@ static NSString *const kFileManagerTableViewCell = @"com.copticomm.cell.filemana
 @property (weak, nonatomic) IBOutlet UIButton *deleteButton;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *deleteTopConstraint;
 
+@property (nonatomic, strong) NSMutableArray<CopoooDBDataModel *> *dataSource;
 
+@property (weak, nonatomic) IBOutlet UIButton *manageButton;
 @end
 
 @implementation FileManagerViewController
@@ -34,6 +37,11 @@ static NSString *const kFileManagerTableViewCell = @"com.copticomm.cell.filemana
     [self.deleteButton setBackgroundImage:[UIColor colorWithHex:0x9c9c9c].toImage forState:UIControlStateDisabled];
     [self.deleteButton setBackgroundImage:[UIColor colorWithHex:0x00a7ff].toImage forState:UIControlStateNormal];
     
+    NSArray<CopoooDBDataModel *> *models = [CopoooDBManager fetchDB:FileTypePDF];
+    if (models) {
+        [self.dataSource addObjectsFromArray:models];
+        [self.tableView reloadData];
+    }
 }
 
 - (void)configurationNavigation
@@ -75,11 +83,27 @@ static NSString *const kFileManagerTableViewCell = @"com.copticomm.cell.filemana
     }];
 }
 
+- (void)removeFileWithIndexPath:(NSIndexPath *)indexPath
+{
+    CopoooDBDataModel *model = self.dataSource[indexPath.row];
+    [CopoooDBManager deleteDB:model.name contactId:model.type];
+    NSString *filePath = [self filePathWithName:model.name];
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    if ([fileManager fileExistsAtPath:filePath]) {
+        [fileManager removeItemAtPath:filePath error:nil];
+    }
+}
+
+- (NSString *)filePathWithName:(NSString *)name {
+    NSString *documentPath = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).firstObject;
+    return [documentPath stringByAppendingPathComponent:name];
+}
+
 #pragma mark - UITableViewDataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 20;
+    return self.dataSource.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -92,8 +116,11 @@ static NSString *const kFileManagerTableViewCell = @"com.copticomm.cell.filemana
         cell.detailTextLabel.textColor = RGBCOLOR(156, 156, 156);
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
-    cell.textLabel.text = @"文件名称.pdf";
-    cell.detailTextLabel.text = @"2018-06-26    09:20:50";
+    CopoooDBDataModel *model = self.dataSource[indexPath.row];
+    cell.textLabel.text = model.name;
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    formatter.dateFormat = @"yyyy-MM-dd    HH:mm:ss";
+    cell.detailTextLabel.text = [formatter stringFromDate:[NSDate dateWithTimeIntervalSince1970:model.time]];
     cell.imageView.image = [UIImage imageNamed:@"my_pdf"];
     return cell;
 }
@@ -123,7 +150,10 @@ static NSString *const kFileManagerTableViewCell = @"com.copticomm.cell.filemana
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        
+        [self removeFileWithIndexPath:indexPath];
+        [self.dataSource removeObjectAtIndex:indexPath.row];
+        [tableView deleteRowsAtIndexPaths:@[indexPath]
+                         withRowAnimation:UITableViewRowAnimationAutomatic];
     }
 }
 
@@ -161,7 +191,27 @@ static NSString *const kFileManagerTableViewCell = @"com.copticomm.cell.filemana
 }
 
 - (IBAction)onMultipleDeletePressed:(UIButton *)sender {
-    
+    NSMutableArray *removeItems = @[].mutableCopy;
+    __weak typeof(self) weakSelf = self;
+    [self.tableView.indexPathsForSelectedRows enumerateObjectsUsingBlock:^(NSIndexPath * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        __strong typeof(weakSelf) strongSelf = weakSelf;
+        [strongSelf removeFileWithIndexPath:obj];
+        [removeItems addObject:strongSelf.dataSource[obj.row]];
+    }];
+    [self.dataSource removeObjectsInArray:removeItems];
+    [self.tableView deleteRowsAtIndexPaths:self.tableView.indexPathsForSelectedRows
+                          withRowAnimation:UITableViewRowAnimationAutomatic];
+    [self onManagePressed:self.manageButton];
+}
+
+#pragma mark - getter
+
+- (NSMutableArray<CopoooDBDataModel *> *)dataSource
+{
+    if (!_dataSource) {
+        _dataSource = @[].mutableCopy;
+    }
+    return _dataSource;
 }
 
 @end

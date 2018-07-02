@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		5F68419D20E361000025BE8F /* FileDownloadItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F68419C20E361000025BE8F /* FileDownloadItem.m */; };
 		5F68419F20E361180025BE8F /* FileDownloadItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F68419E20E361180025BE8F /* FileDownloadItem.xib */; };
+		5F80729520E9D94F0073620C /* FileBrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5F80729320E9D94F0073620C /* FileBrowserViewController.m */; };
+		5F80729620E9D94F0073620C /* FileBrowserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5F80729420E9D94F0073620C /* FileBrowserViewController.xib */; };
 		5FBE991820E61CC4009CBBBD /* NewsAttatchmentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FBE991720E61CC4009CBBBD /* NewsAttatchmentModel.m */; };
 		5FBE991C20E62D0A009CBBBD /* CircleProgressBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FBE991B20E62D0A009CBBBD /* CircleProgressBar.m */; };
 		5FEA1E8D20E2194C00219D53 /* FileManagerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FEA1E8B20E2194C00219D53 /* FileManagerViewController.m */; };
@@ -488,6 +490,9 @@
 		5F68419B20E361000025BE8F /* FileDownloadItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FileDownloadItem.h; sourceTree = "<group>"; };
 		5F68419C20E361000025BE8F /* FileDownloadItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FileDownloadItem.m; sourceTree = "<group>"; };
 		5F68419E20E361180025BE8F /* FileDownloadItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FileDownloadItem.xib; sourceTree = "<group>"; };
+		5F80729220E9D94F0073620C /* FileBrowserViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FileBrowserViewController.h; sourceTree = "<group>"; };
+		5F80729320E9D94F0073620C /* FileBrowserViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FileBrowserViewController.m; sourceTree = "<group>"; };
+		5F80729420E9D94F0073620C /* FileBrowserViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FileBrowserViewController.xib; sourceTree = "<group>"; };
 		5FBE991620E61CC4009CBBBD /* NewsAttatchmentModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NewsAttatchmentModel.h; sourceTree = "<group>"; };
 		5FBE991720E61CC4009CBBBD /* NewsAttatchmentModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NewsAttatchmentModel.m; sourceTree = "<group>"; };
 		5FBE991A20E62D0A009CBBBD /* CircleProgressBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CircleProgressBar.h; sourceTree = "<group>"; };
@@ -1441,6 +1446,9 @@
 				5FEA1E8A20E2194C00219D53 /* FileManagerViewController.h */,
 				5FEA1E8B20E2194C00219D53 /* FileManagerViewController.m */,
 				5FEA1E8C20E2194C00219D53 /* FileManagerViewController.xib */,
+				5F80729220E9D94F0073620C /* FileBrowserViewController.h */,
+				5F80729320E9D94F0073620C /* FileBrowserViewController.m */,
+				5F80729420E9D94F0073620C /* FileBrowserViewController.xib */,
 			);
 			path = "文件管理";
 			sourceTree = "<group>";
@@ -3529,6 +3537,7 @@
 				81E1643C1D8006CE00EE45C8 /* ElectricityFeeDisplayFrontView.xib in Resources */,
 				815867231E3737770057A1F6 /* XZMRefresh.bundle in Resources */,
 				7C233B001F345E5B0078D50E /* TicketCenterViewController.xib in Resources */,
+				5F80729620E9D94F0073620C /* FileBrowserViewController.xib in Resources */,
 				81F1654A1DDABBEA009EED7D /* EBMute.mp3 in Resources */,
 				816006831F15CA250051932B /* ShareSDKUI.bundle in Resources */,
 				815A23451D90CE2B00BDA13E /* JGPayPassWordView2.xib in Resources */,
@@ -3787,6 +3796,7 @@
 				8149FA511E02340B0061BC40 /* RechargeRecordViewController.m in Sources */,
 				810830331D7949A50039FDE9 /* Order.m in Sources */,
 				815867181E3737770057A1F6 /* XZMBaseRefreshView.m in Sources */,
+				5F80729520E9D94F0073620C /* FileBrowserViewController.m in Sources */,
 				7C9F1CE61F443A03008D0A4C /* ElectricUserYearTrendDataModel.m in Sources */,
 				814299271D87E502001888A6 /* HistoryBillListTableViewCell.m in Sources */,
 				81EAE6721DD0236C00C6A615 /* MJRefreshAutoFooter.m in Sources */,

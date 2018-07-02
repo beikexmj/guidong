@@ -13,6 +13,7 @@
             <connections>
                 <outlet property="deleteButton" destination="cfc-td-eXw" id="ep7-qL-3g1"/>
                 <outlet property="deleteTopConstraint" destination="hhK-aN-4I2" id="W7H-Ou-YE0"/>
+                <outlet property="manageButton" destination="YBU-qO-r9r" id="JSy-aK-0OV"/>
                 <outlet property="navigationBackgroundHeight" destination="zDn-sI-D3Y" id="GfZ-VW-Rbc"/>
                 <outlet property="tableView" destination="mg1-jI-aLX" id="HfX-Tt-fEC"/>
                 <outlet property="titleLabel" destination="T9P-Yr-dSy" id="XEy-ZN-KpB"/>

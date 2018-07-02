@@ -58,6 +58,7 @@
 
 - (void)startDownload
 {
+    self.isDownloading = YES;
     __weak typeof(self) weakSelf = self;
     [ZTHttpTool downloadWithURL:[NSString stringWithFormat:@"%@%@", DOWNLOAD_URL, self.item.download]
                      targetPath:[self filePathWithName:self.item.fileName]
@@ -68,6 +69,7 @@
                        }
               completionHandler:^(NSString * _Nullable filePath, NSError * _Nullable error) {
                   __strong typeof(weakSelf) strongSelf = weakSelf;
+                  strongSelf.isDownloading = NO;
                   strongSelf.operationButton.hidden = NO;
                   strongSelf.progressView.hidden = YES;
                   if (filePath && !error) {
