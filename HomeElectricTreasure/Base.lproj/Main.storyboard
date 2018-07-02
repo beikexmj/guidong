@@ -430,7 +430,7 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="125" height="90"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <inset key="imageEdgeInsets" minX="0.0" minY="-10" maxX="0.0" maxY="0.0"/>
-                                                    <state key="normal" image="设置2">
+                                                    <state key="normal" image="my_icon_document">
                                                         <color key="titleColor" red="0.37647058820000001" green="0.37647058820000001" blue="0.37647058820000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </state>
                                                     <connections>
@@ -730,6 +730,7 @@
         <image name="icon_news2" width="20" height="24"/>
         <image name="icon_person2" width="21" height="25"/>
         <image name="logo2" width="25" height="25"/>
+        <image name="my_icon_document" width="38" height="38"/>
         <image name="per_bac" width="375" height="135"/>
         <image name="per_bac1" width="375" height="190"/>
         <image name="per_head" width="70" height="70"/>

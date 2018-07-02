@@ -1,10 +1,4 @@
 
-/* Class = "UIButton"; normalTitle = "公共信息"; ObjectID = "10n-0l-IJI"; */
-"10n-0l-IJI.normalTitle" = "公共信息";
-
-/* Class = "UIButton"; normalTitle = "桂东新闻"; ObjectID = "76r-if-w0z"; */
-"76r-if-w0z.normalTitle" = "桂东新闻";
-
 /* Class = "UILabel"; text = "电卡管理"; ObjectID = "7CH-io-V17"; */
 "7CH-io-V17.text" = "电卡管理";
 
@@ -13,9 +7,6 @@
 
 /* Class = "UILabel"; text = "我的电费"; ObjectID = "HXO-jx-Tsc"; */
 "HXO-jx-Tsc.text" = "我的电费";
-
-/* Class = "UIButton"; normalTitle = "电价法规"; ObjectID = "HpD-Zz-xpL"; */
-"HpD-Zz-xpL.normalTitle" = "电价法规";
 
 /* Class = "UIButton"; normalTitle = "      "; ObjectID = "JAQ-lV-LaA"; */
 "JAQ-lV-LaA.normalTitle" = "      ";
@@ -35,11 +26,8 @@
 /* Class = "UILabel"; text = "0.00"; ObjectID = "cmA-NX-9jA"; */
 "cmA-NX-9jA.text" = "0.00";
 
-/* Class = "UIButton"; normalTitle = "帮助"; ObjectID = "gEa-80-mgs"; */
-"gEa-80-mgs.normalTitle" = "帮助";
-
-/* Class = "UILabel"; text = "设置"; ObjectID = "i7Z-jf-ojv"; */
-"i7Z-jf-ojv.text" = "设置";
+/* Class = "UILabel"; text = "文件管理"; ObjectID = "i7Z-jf-ojv"; */
+"i7Z-jf-ojv.text" = "文件管理";
 
 /* Class = "UITabBarItem"; title = "个人中心"; ObjectID = "lUG-y6-O7U"; */
 "lUG-y6-O7U.title" = "个人中心";
