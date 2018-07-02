@@ -10,4 +10,6 @@
 
 @interface FileBrowserViewController : UIViewController
 
+@property (nonatomic, strong, nullable) NSURL *fileURL;
+
 @end

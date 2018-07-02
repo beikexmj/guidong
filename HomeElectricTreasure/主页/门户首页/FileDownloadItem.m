@@ -9,8 +9,12 @@
 #import "FileDownloadItem.h"
 #import "CopoooDBManager.h"
 #import "UIColor+WB.h"
+#import "FileBrowserViewController.h"
 
 @implementation FileDownloadItem
+{
+    BOOL _isExist;
+}
 
 - (instancetype)initWithFrame:(CGRect)frame
 {
@@ -35,9 +39,9 @@
 {
     _item = item;
     self.fileNameLabel.text = item.fileName;
-    BOOL isExist = [CopoooDBManager searchDB:item.fileName type:FileTypePDF];
-    self.downloadStateView.hidden = !isExist;
-    [self switchOperationStateWithFileExist:isExist];
+    _isExist = [CopoooDBManager searchDB:item.fileName type:FileTypePDF];
+    self.downloadStateView.hidden = !_isExist;
+    [self switchOperationStateWithFileExist:_isExist];
 }
 
 - (NSString *)filePathWithName:(NSString *)name {
@@ -73,6 +77,7 @@
                   strongSelf.operationButton.hidden = NO;
                   strongSelf.progressView.hidden = YES;
                   if (filePath && !error) {
+                      _isExist = YES;
                       [strongSelf switchOperationStateWithFileExist:YES];
                       strongSelf.downloadStateView.hidden = NO;
                       [strongSelf saveToDatabaseWithPath:filePath];
@@ -94,9 +99,15 @@
 }
 
 - (IBAction)onAction:(id)sender {
-    self.operationButton.hidden = YES;
-    self.progressView.hidden = NO;
-    [self startDownload];
+    if (_isExist) {
+        FileBrowserViewController *vc = [[FileBrowserViewController alloc] init];
+        vc.fileURL = [NSURL fileURLWithPath:[self filePathWithName:self.item.fileName]];
+        [self.viewController.navigationController pushViewController:vc animated:YES];
+    } else {
+        self.operationButton.hidden = YES;
+        self.progressView.hidden = NO;
+        [self startDownload];
+    }
 }
 
 

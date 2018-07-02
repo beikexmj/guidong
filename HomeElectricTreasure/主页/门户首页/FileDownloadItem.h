@@ -17,6 +17,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *downloadStateView;
 @property (nonatomic, strong) NewsAttatchmentFormItem *item;
 @property (weak, nonatomic) IBOutlet CircleProgressBar *progressView;
+@property (nonatomic, weak) UIViewController *viewController;
 
 @property (nonatomic) BOOL isDownloading;
 

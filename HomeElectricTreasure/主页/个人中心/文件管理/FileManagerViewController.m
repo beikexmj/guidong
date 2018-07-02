@@ -10,6 +10,7 @@
 #import "UIColor+WB.h"
 #import "UIView+Frame.h"
 #import "CopoooDBManager.h"
+#import "FileBrowserViewController.h"
 
 static NSString *const kFileManagerTableViewCell = @"com.copticomm.cell.filemanager";
 
@@ -161,6 +162,9 @@ static NSString *const kFileManagerTableViewCell = @"com.copticomm.cell.filemana
 {
     if (!tableView.allowsMultipleSelection) {
         [tableView deselectRowAtIndexPath:indexPath animated:YES];
+        FileBrowserViewController *browserViewController = [[FileBrowserViewController alloc] init];
+        browserViewController.fileURL = [NSURL fileURLWithPath:[self filePathWithName:self.dataSource[indexPath.row].name]];
+        [self.navigationController pushViewController:browserViewController animated:YES];
     } else {
         self.deleteButton.enabled = tableView.indexPathsForSelectedRows.count != 0;
     }

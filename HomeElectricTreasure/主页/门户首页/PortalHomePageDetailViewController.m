@@ -125,6 +125,7 @@
         __strong typeof(weakSelf) strongSelf = weakSelf;
         FileDownloadItem *item = [[FileDownloadItem alloc] initWithFrame:CGRectMake(0, (itemHeight + itemMargin) * idx, strongSelf.downloadItemContainer.yz_width, itemHeight)];
         item.item = obj;
+        item.viewController = strongSelf;
         [strongSelf.downloadItemContainer addSubview:item];
         lastItem = item;
     }];
