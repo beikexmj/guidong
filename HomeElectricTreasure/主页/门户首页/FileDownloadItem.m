@@ -64,7 +64,7 @@
 {
     self.isDownloading = YES;
     __weak typeof(self) weakSelf = self;
-    [ZTHttpTool downloadWithURL:[NSString stringWithFormat:@"%@%@", DOWNLOAD_URL, self.item.download]
+    [ZTHttpTool downloadWithURL:[NSString stringWithFormat:@"%@%@", BASE_URL2, self.item.download]
                      targetPath:[self filePathWithName:self.item.originName]
                          params:nil
                        progress:^(float progress) {

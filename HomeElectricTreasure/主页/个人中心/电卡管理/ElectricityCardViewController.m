@@ -12,6 +12,7 @@
 #import "ElectricityCardDataModel.h"
 #import "JPUSHService.h"
 #import "NSString+Replace.h"
+#import "UITableView+WFEmpty.h"
 @class ElectricityCardDataModel;
 @interface ElectricityCardViewController ()<UIAlertViewDelegate>
 {
@@ -56,19 +57,23 @@
             [self setTags];
             if (_myArray.count ==0) {
                 _delBtn.hidden = YES;
-                self.myTableView.hidden = YES;
+                [_myTableView addEmptyViewWithImageName:@"暂无电卡" title:@"你还没有添加电卡"];
+                _myTableView.emptyView.hidden = NO;
             }else{
                 _delBtn.hidden = NO;
-                self.myTableView.hidden = NO;
+                _myTableView.emptyView.hidden = YES;
             }
             [self.myTableView reloadData];
         }else{
-            self.myTableView.hidden = YES;
+            [_myTableView addEmptyViewWithImageName:@"暂无电卡" title:@"你还没有添加电卡"];
+            _myTableView.emptyView.hidden = NO;
             _delBtn.hidden = YES;
             [MBProgressHUD showError:electricityCard.msg];
         }
     } failure:^(NSError *error) {
         NSLog(@"%@",error);
+        [_myTableView addEmptyViewWithImageName:@"暂无网络连接" title:@"网络不给力，请检测您的网络设置"];
+        _myTableView.emptyView.hidden = NO;
     }];
 }
 -(void)setTags{
@@ -242,6 +247,10 @@
                 _delBtn.hidden = YES;
             }else{
                 _delBtn.hidden = NO;
+            }
+            if (_myArray.count ==0) {
+                [_myTableView addEmptyViewWithImageName:@"暂无电卡" title:@"你还没有添加电卡"];
+                _myTableView.emptyView.hidden = NO;
             }
             [self.myTableView reloadData];
         }else{
