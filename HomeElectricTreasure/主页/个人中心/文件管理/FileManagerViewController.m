@@ -12,10 +12,7 @@
 #import "CopoooDBManager.h"
 #import "FileBrowserViewController.h"
 #import "UITableView+WFEmpty.h"
-<<<<<<< HEAD
 
-=======
->>>>>>> xiamingjiang
 static NSString *const kFileManagerTableViewCell = @"com.copticomm.cell.filemanager";
 
 @interface FileManagerViewController ()<UITableViewDelegate, UITableViewDataSource>
@@ -56,7 +53,7 @@ static NSString *const kFileManagerTableViewCell = @"com.copticomm.cell.filemana
         _tableView.emptyView.hidden = NO;
         _manageButton.hidden = YES;
     }
-    [self showEmptyView:self.dataSource.count == 0];
+//    [self showEmptyView:self.dataSource.count == 0];
 }
 
 - (void)configurationNavigation
@@ -230,15 +227,13 @@ static NSString *const kFileManagerTableViewCell = @"com.copticomm.cell.filemana
     [self.tableView deleteRowsAtIndexPaths:self.tableView.indexPathsForSelectedRows
                           withRowAnimation:UITableViewRowAnimationAutomatic];
     [self onManagePressed:self.manageButton];
-<<<<<<< HEAD
-    [self showEmptyView:self.dataSource.count == 0];
-=======
+//    [self showEmptyView:self.dataSource.count == 0];
+
     if (self.dataSource.count == 0) {
         [_tableView addEmptyViewWithImageName:@"暂无文件下载记录" title:@"暂无文件下载记录"];
         _tableView.emptyView.hidden = NO;
         _manageButton.hidden = YES;
     }
->>>>>>> xiamingjiang
 }
 
 #pragma mark - getter
