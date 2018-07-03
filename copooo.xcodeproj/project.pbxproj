@@ -501,7 +501,6 @@
 		5FEA1E8B20E2194C00219D53 /* FileManagerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FileManagerViewController.m; sourceTree = "<group>"; };
 		5FEA1E8C20E2194C00219D53 /* FileManagerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FileManagerViewController.xib; sourceTree = "<group>"; };
 		7C1425521F4D1B69000E14E3 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
-		7C1835BF206A3E66001F831F /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		7C1887161FFF160900E45B9A /* InviteRankingDataModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InviteRankingDataModel.h; sourceTree = "<group>"; };
 		7C1887171FFF160900E45B9A /* InviteRankingDataModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InviteRankingDataModel.m; sourceTree = "<group>"; };
 		7C1887191FFF29CC00E45B9A /* InvitedRegistrationDataModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InvitedRegistrationDataModel.h; sourceTree = "<group>"; };
@@ -712,6 +711,7 @@
 		7CB3305D1FCB9E80003E9964 /* PortalHomePageDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PortalHomePageDetailViewController.m; sourceTree = "<group>"; };
 		7CB3305E1FCB9E80003E9964 /* PortalHomePageDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PortalHomePageDetailViewController.xib; sourceTree = "<group>"; };
 		7CB330611FCBAAAB003E9964 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		7CEE390120EA08C30029C4A6 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		7CF683E31FDFBF5200A5D829 /* MyQRCodeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyQRCodeViewController.h; sourceTree = "<group>"; };
 		7CF683E41FDFBF5200A5D829 /* MyQRCodeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyQRCodeViewController.m; sourceTree = "<group>"; };
 		7CF683E51FDFBF5200A5D829 /* MyQRCodeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyQRCodeViewController.xib; sourceTree = "<group>"; };
@@ -3934,7 +3934,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				81159E891D61AF4C00431EA9 /* Base */,
-				7C1835BF206A3E66001F831F /* zh-Hans */,
+				7CEE390120EA08C30029C4A6 /* zh-Hans */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";

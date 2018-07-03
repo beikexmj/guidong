@@ -26,6 +26,7 @@
 @interface NewsAttatchmentFormItem : NSObject
 
 @property (nonatomic, copy) NSString *fileName;
+@property (nonatomic, copy) NSString *originName;
 @property (nonatomic, copy) NSString *download;
 @property (nonatomic, copy) NSString *fileSize;
 
