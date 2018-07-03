@@ -22,7 +22,7 @@
     }
     //此获取的版本号对应version，打印出来对应为1.2.3.4.5这样的字符串
     NSString *string = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
-    self.version.text = [NSString stringWithFormat:@"桂东电力v%@",string];
+    self.version.text = [NSString stringWithFormat:@"桂东电力居家合v%@",string];
     // Do any additional setup after loading the view from its nib.
 }
 

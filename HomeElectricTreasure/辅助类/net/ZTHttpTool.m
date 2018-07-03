@@ -29,7 +29,7 @@
     //        }
     //    }];
     NSURLSessionConfiguration *config = [NSURLSessionConfiguration defaultSessionConfiguration];
-    AFHTTPSessionManager *manager = [[AFHTTPSessionManager alloc] initWithBaseURL:[NSURL URLWithString:DOWNLOAD_URL] sessionConfiguration:config];
+    AFHTTPSessionManager *manager = [[AFHTTPSessionManager alloc] initWithBaseURL:[NSURL URLWithString:BASE_URL2] sessionConfiguration:config];
     [manager downloadTaskWithRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:url]]
                             progress:^(NSProgress * _Nonnull downloadProgress) {
                                 
@@ -46,7 +46,7 @@
     progress = [progress copy];
     completionHandler = [completionHandler copy];
     NSURLSessionConfiguration *config = [NSURLSessionConfiguration defaultSessionConfiguration];
-    AFHTTPSessionManager *manager = [[AFHTTPSessionManager alloc] initWithBaseURL:[NSURL URLWithString:DOWNLOAD_URL] sessionConfiguration:config];
+    AFHTTPSessionManager *manager = [[AFHTTPSessionManager alloc] initWithBaseURL:[NSURL URLWithString:BASE_URL2] sessionConfiguration:config];
     [[manager downloadTaskWithRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:url]]
                             progress:^(NSProgress * _Nonnull downloadProgress) {
                                 progress ? progress(downloadProgress.completedUnitCount / downloadProgress.totalUnitCount) : nil;

@@ -24,12 +24,12 @@
 //#define BASE_URL  @"http://39.108.151.81:8080" //阿里云
 //#define BASE_URL  @"https://www.jujiahe.com" //阿里云
 
-#define DOWNLOAD_URL @"http://172.16.103.221"
-#define BASE_URL  @"http://172.16.103.221/appdev" //本地
+//#define BASE_URL2 @"http://172.16.103.221"
+//#define BASE_URL  @"http://172.16.103.221/appdev" //本地
 //#define BASE_URL  @"http://172.16.103.229:8080" //本地
 //#define BASE_URL  @"http://172.16.103.14:8080" //本地
 //#define BASE_URL  @"http://172.16.101.175:8080" //本地
-//#define BASE_URL  @"https://app.966068.cn/app" //桂东
+#define BASE_URL  @"https://app.966068.cn/app" //桂东
 #define BASE_URL2  @"https://app.966068.cn" //桂东
 
 
