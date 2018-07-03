@@ -11,6 +11,7 @@
 #import "UIView+Frame.h"
 #import "CopoooDBManager.h"
 #import "FileBrowserViewController.h"
+#import "UITableView+WFEmpty.h"
 
 static NSString *const kFileManagerTableViewCell = @"com.copticomm.cell.filemanager";
 
@@ -43,6 +44,7 @@ static NSString *const kFileManagerTableViewCell = @"com.copticomm.cell.filemana
         [self.dataSource addObjectsFromArray:models];
         [self.tableView reloadData];
     }
+    [self showEmptyView:self.dataSource.count == 0];
 }
 
 - (void)configurationNavigation
@@ -100,6 +102,15 @@ static NSString *const kFileManagerTableViewCell = @"com.copticomm.cell.filemana
     return [documentPath stringByAppendingPathComponent:name];
 }
 
+- (void)showEmptyView:(BOOL)isEmpty
+{
+    if (isEmpty) {
+        [self.tableView addEmptyViewWithImageName:@"暂无文件下载记录" title:@"暂无文件"];
+    } else {
+        [self.tableView.emptyView removeFromSuperview];
+    }
+}
+
 #pragma mark - UITableViewDataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -155,6 +166,7 @@ static NSString *const kFileManagerTableViewCell = @"com.copticomm.cell.filemana
         [self.dataSource removeObjectAtIndex:indexPath.row];
         [tableView deleteRowsAtIndexPaths:@[indexPath]
                          withRowAnimation:UITableViewRowAnimationAutomatic];
+        [self showEmptyView:self.dataSource.count == 0];
     }
 }
 
@@ -206,6 +218,7 @@ static NSString *const kFileManagerTableViewCell = @"com.copticomm.cell.filemana
     [self.tableView deleteRowsAtIndexPaths:self.tableView.indexPathsForSelectedRows
                           withRowAnimation:UITableViewRowAnimationAutomatic];
     [self onManagePressed:self.manageButton];
+    [self showEmptyView:self.dataSource.count == 0];
 }
 
 #pragma mark - getter
