@@ -96,10 +96,17 @@ WYPieChartViewDatasource>
             _pieView.quarterLabel.text = [_electricUserQuarterTrend.pointTrendQuarter.currentDate substringFromIndex:5];//_electricUserQuarterTrend.pointTrendQuarter.data[0].quarter;
         }
         NSMutableArray *dataArry = [NSMutableArray array];
+        NSInteger i= 0;
         for (QuarterData *data in _electricUserQuarterTrend.pointTrendQuarter.data) {
+            
             [dataArry addObject:data.elecSum];
+            if ([data.elecSum isEqualToString:@"0"]) {
+                i++;
+            }
         }
-        _pieView.values = dataArry;
+        if (i == 3) {
+            _pieView.values = @[@"1",@"1",@"1"];
+        }
         
         [quarterChartView addSubview:_pieView];
         
