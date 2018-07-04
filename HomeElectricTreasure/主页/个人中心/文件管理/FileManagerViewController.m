@@ -42,18 +42,9 @@ static NSString *const kFileManagerTableViewCell = @"com.copticomm.cell.filemana
     NSArray<CopoooDBDataModel *> *models = [CopoooDBManager fetchDB:FileTypePDF];
     if (models) {
         [self.dataSource addObjectsFromArray:models];
-        if (self.dataSource.count == 0) {
-                [_tableView addEmptyViewWithImageName:@"暂无文件下载记录" title:@"暂无文件下载记录"];
-                _tableView.emptyView.hidden = NO;
-                _manageButton.hidden = YES;
-        }
         [self.tableView reloadData];
-    }else{
-        [_tableView addEmptyViewWithImageName:@"暂无文件下载记录" title:@"暂无文件下载记录"];
-        _tableView.emptyView.hidden = NO;
-        _manageButton.hidden = YES;
     }
-//    [self showEmptyView:self.dataSource.count == 0];
+    [self showEmptyView:self.dataSource.count == 0];
 }
 
 - (void)configurationNavigation
@@ -113,8 +104,9 @@ static NSString *const kFileManagerTableViewCell = @"com.copticomm.cell.filemana
 
 - (void)showEmptyView:(BOOL)isEmpty
 {
+    self.manageButton.hidden = isEmpty;
     if (isEmpty) {
-        [self.tableView addEmptyViewWithImageName:@"暂无文件下载记录" title:@"暂无文件"];
+        [self.tableView addEmptyViewWithImageName:@"暂无文件下载记录" title:@"暂无文件下载记录"];
     } else {
         [self.tableView.emptyView removeFromSuperview];
     }
@@ -227,13 +219,7 @@ static NSString *const kFileManagerTableViewCell = @"com.copticomm.cell.filemana
     [self.tableView deleteRowsAtIndexPaths:self.tableView.indexPathsForSelectedRows
                           withRowAnimation:UITableViewRowAnimationAutomatic];
     [self onManagePressed:self.manageButton];
-//    [self showEmptyView:self.dataSource.count == 0];
-
-    if (self.dataSource.count == 0) {
-        [_tableView addEmptyViewWithImageName:@"暂无文件下载记录" title:@"暂无文件下载记录"];
-        _tableView.emptyView.hidden = NO;
-        _manageButton.hidden = YES;
-    }
+    [self showEmptyView:self.dataSource.count == 0];
 }
 
 #pragma mark - getter
