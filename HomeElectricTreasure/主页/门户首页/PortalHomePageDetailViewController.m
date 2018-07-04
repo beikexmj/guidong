@@ -102,7 +102,7 @@
         [params setObject:self.onceList.ids forKey:@"newsId"];
     }
     __weak typeof(self) weakSelf = self;
-    [ZTHttpTool postWithUrl:@"/appdev/news/getNewsAttachment"
+    [ZTHttpTool postWithUrl:@"news/getNewsAttachment"
                       param:params
                     success:^(id responseObj) {
                         NSString * str = [JGEncrypt encryptWithContent:[responseObj mj_JSONObject][@"data"] type:kCCDecrypt key:KEY];

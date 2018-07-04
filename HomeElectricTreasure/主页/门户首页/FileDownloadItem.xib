@@ -42,11 +42,11 @@
                     <rect key="frame" x="27" y="336" width="12" height="12"/>
                 </imageView>
                 <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h4V-ZT-k1Y" customClass="CircleProgressBar">
-                    <rect key="frame" x="343" y="322" width="22" height="22"/>
-                    <color key="backgroundColor" red="0.96470588239999999" green="0.96470588239999999" blue="0.96470588239999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <rect key="frame" x="338" y="319.5" width="27" height="27"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="22" id="tCe-VL-Zr6"/>
-                        <constraint firstAttribute="height" constant="22" id="zyk-MO-CLU"/>
+                        <constraint firstAttribute="width" constant="27" id="tCe-VL-Zr6"/>
+                        <constraint firstAttribute="height" constant="27" id="zyk-MO-CLU"/>
                     </constraints>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="progressBarWidth">
@@ -63,6 +63,9 @@
                         </userDefinedRuntimeAttribute>
                         <userDefinedRuntimeAttribute type="color" keyPath="hintTextColor">
                             <color key="value" red="0.0" green="0.65490196079999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="hintViewBackgroundColor">
+                            <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </view>

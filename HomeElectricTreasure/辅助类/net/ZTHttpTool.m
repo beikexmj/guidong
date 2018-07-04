@@ -49,7 +49,7 @@
     AFHTTPSessionManager *manager = [[AFHTTPSessionManager alloc] initWithBaseURL:[NSURL URLWithString:BASE_URL2] sessionConfiguration:config];
     [[manager downloadTaskWithRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:url]]
                             progress:^(NSProgress * _Nonnull downloadProgress) {
-                                progress ? progress(downloadProgress.completedUnitCount / downloadProgress.totalUnitCount) : nil;
+                                progress ? progress(@(downloadProgress.completedUnitCount).floatValue / @(downloadProgress.totalUnitCount).floatValue) : nil;
                             }
                          destination:^NSURL * _Nonnull(NSURL * _Nonnull targetPath, NSURLResponse * _Nonnull response) {
                              return [NSURL fileURLWithPath:path];

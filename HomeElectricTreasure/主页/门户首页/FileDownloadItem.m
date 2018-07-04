@@ -27,9 +27,14 @@
         [self.operationButton setTitleColor:[UIColor colorWithHex:0xc0c0c0] forState:UIControlStateNormal];
         self.operationButton.titleLabel.font = [UIFont systemFontOfSize:14];
         
-        [self.progressView setHintAttributedGenerationBlock:^NSAttributedString *(CGFloat progress) {
-            return [[NSAttributedString alloc] initWithString:[NSString stringWithFormat:@"%.f%%", progress * 100]
-                                                   attributes:@{NSFontAttributeName : [UIFont systemFontOfSize:12.0]}];
+        self.progressView.hintTextFont = [UIFont systemFontOfSize:12];
+        self.progressView.hintTextColor = RGBA(0x00a7ff, 1);
+        self.progressView.progressBarTrackColor = [UIColor clearColor];
+        self.progressView.progressBarProgressColor = RGBA(0x00a7ff, 1);
+        self.progressView.hintHidden = NO;
+        self.progressView.hintViewSpacing = 1.0;
+        [self.progressView setHintTextGenerationBlock:^NSString *(CGFloat progress) {
+            return [NSString stringWithFormat:@"%.f%%", progress * 100];
         }];
     }
     return self;
@@ -64,12 +69,14 @@
 {
     self.isDownloading = YES;
     __weak typeof(self) weakSelf = self;
-    [ZTHttpTool downloadWithURL:[NSString stringWithFormat:@"%@%@", BASE_URL2, self.item.download]
+    [ZTHttpTool downloadWithURL:[NSString stringWithFormat:@"%@%@", BASE_URL, self.item.download]
                      targetPath:[self filePathWithName:self.item.originName]
                          params:nil
                        progress:^(float progress) {
                            __strong typeof(weakSelf) strongSelf = weakSelf;
-                           [strongSelf.progressView setProgress:progress animated:YES];
+                           dispatch_async(dispatch_get_main_queue(), ^{
+                              [strongSelf.progressView setProgress:progress animated:NO];
+                           });
                        }
               completionHandler:^(NSString * _Nullable filePath, NSError * _Nullable error) {
                   __strong typeof(weakSelf) strongSelf = weakSelf;
