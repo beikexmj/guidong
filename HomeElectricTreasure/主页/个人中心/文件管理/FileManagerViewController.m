@@ -131,6 +131,7 @@ static NSString *const kFileManagerTableViewCell = @"com.copticomm.cell.filemana
     }
     CopoooDBDataModel *model = self.dataSource[indexPath.row];
     cell.textLabel.text = model.name;
+    cell.textLabel.lineBreakMode = NSLineBreakByTruncatingMiddle;
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     formatter.dateFormat = @"yyyy-MM-dd    HH:mm:ss";
     cell.detailTextLabel.text = [formatter stringFromDate:[NSDate dateWithTimeIntervalSince1970:model.time]];
