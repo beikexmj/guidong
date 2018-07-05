@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -15,7 +15,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="130"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="129"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="129.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cVA-dT-A9g">
@@ -37,15 +37,8 @@
                                     <constraint firstAttribute="height" constant="1" id="KgF-Zf-nNL"/>
                                 </constraints>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="per_record_icon_time" translatesAutoresizingMaskIntoConstraints="NO" id="ERf-oK-2ee">
-                                <rect key="frame" x="21" y="56" width="20" height="20"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="20" id="5Uf-lo-Qj3"/>
-                                    <constraint firstAttribute="width" constant="20" id="cWC-ZG-OGA"/>
-                                </constraints>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2016年10月25日  23:00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lb4-6K-000">
-                                <rect key="frame" x="63" y="55" width="243" height="21"/>
+                                <rect key="frame" x="14" y="55" width="292" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="19O-v0-y6J"/>
                                 </constraints>
@@ -53,15 +46,8 @@
                                 <color key="textColor" red="0.37647058823529411" green="0.37647058823529411" blue="0.37647058823529411" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="per_record_icon_money" translatesAutoresizingMaskIntoConstraints="NO" id="LD7-bC-stk">
-                                <rect key="frame" x="21" y="85" width="20" height="20"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="20" id="NBL-9y-EBA"/>
-                                    <constraint firstAttribute="width" constant="20" id="umE-Lv-mnm"/>
-                                </constraints>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p01-VX-YVd">
-                                <rect key="frame" x="63" y="84" width="243" height="21"/>
+                                <rect key="frame" x="14" y="84" width="292" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="60L-xv-FbW"/>
                                 </constraints>
@@ -86,21 +72,17 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Lb4-6K-000" firstAttribute="leading" secondItem="ERf-oK-2ee" secondAttribute="trailing" constant="22" id="31x-VA-uBm"/>
                             <constraint firstAttribute="trailing" secondItem="p01-VX-YVd" secondAttribute="trailing" constant="14" id="3Pn-W3-q5f"/>
                             <constraint firstAttribute="bottom" secondItem="zzy-Ri-9ae" secondAttribute="bottom" id="67K-ws-7Yr"/>
                             <constraint firstItem="bf4-a7-Ie2" firstAttribute="leading" secondItem="cVA-dT-A9g" secondAttribute="leading" constant="14" id="AoY-00-jU5"/>
                             <constraint firstItem="k2x-wz-pq8" firstAttribute="top" secondItem="cVA-dT-A9g" secondAttribute="top" constant="8" id="CzT-Jh-II1"/>
                             <constraint firstAttribute="trailing" secondItem="Lb4-6K-000" secondAttribute="trailing" constant="14" id="Epb-fB-fd1"/>
                             <constraint firstAttribute="trailing" secondItem="zzy-Ri-9ae" secondAttribute="trailing" id="GJv-c7-zea"/>
-                            <constraint firstItem="LD7-bC-stk" firstAttribute="leading" secondItem="cVA-dT-A9g" secondAttribute="leading" constant="21" id="UQv-UL-p77"/>
-                            <constraint firstItem="ERf-oK-2ee" firstAttribute="leading" secondItem="cVA-dT-A9g" secondAttribute="leading" constant="21" id="XOj-gd-iMj"/>
+                            <constraint firstItem="p01-VX-YVd" firstAttribute="leading" secondItem="cVA-dT-A9g" secondAttribute="leading" constant="14" id="TMJ-G3-kv1"/>
                             <constraint firstItem="k2x-wz-pq8" firstAttribute="leading" secondItem="cVA-dT-A9g" secondAttribute="leading" constant="14" id="ZDX-Fa-9Vy"/>
                             <constraint firstItem="Lb4-6K-000" firstAttribute="top" secondItem="bf4-a7-Ie2" secondAttribute="bottom" constant="17" id="aaM-Sy-stp"/>
                             <constraint firstItem="bf4-a7-Ie2" firstAttribute="top" secondItem="k2x-wz-pq8" secondAttribute="bottom" constant="8" id="bEo-8O-Egn"/>
-                            <constraint firstItem="p01-VX-YVd" firstAttribute="leading" secondItem="LD7-bC-stk" secondAttribute="trailing" constant="22" id="fkT-ib-C1X"/>
-                            <constraint firstItem="ERf-oK-2ee" firstAttribute="top" secondItem="bf4-a7-Ie2" secondAttribute="bottom" constant="18" id="ggq-wD-IPB"/>
-                            <constraint firstItem="LD7-bC-stk" firstAttribute="top" secondItem="ERf-oK-2ee" secondAttribute="bottom" constant="9" id="md8-fC-vuF"/>
+                            <constraint firstItem="Lb4-6K-000" firstAttribute="leading" secondItem="cVA-dT-A9g" secondAttribute="leading" constant="14" id="ljF-0W-ohd"/>
                             <constraint firstItem="zzy-Ri-9ae" firstAttribute="leading" secondItem="cVA-dT-A9g" secondAttribute="leading" id="pUX-yf-mWr"/>
                             <constraint firstAttribute="trailing" secondItem="k2x-wz-pq8" secondAttribute="trailing" constant="8" id="qJ0-cN-E8c"/>
                             <constraint firstItem="p01-VX-YVd" firstAttribute="top" secondItem="Lb4-6K-000" secondAttribute="bottom" constant="8" id="tDW-tu-9wZ"/>
@@ -126,8 +108,4 @@
             <point key="canvasLocation" x="25" y="90"/>
         </tableViewCell>
     </objects>
-    <resources>
-        <image name="per_record_icon_money" width="20" height="20"/>
-        <image name="per_record_icon_time" width="20" height="20"/>
-    </resources>
 </document>

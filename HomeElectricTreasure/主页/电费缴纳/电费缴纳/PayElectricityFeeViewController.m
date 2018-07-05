@@ -767,6 +767,11 @@
 }
 - (void)weixinPay:(NSDictionary *)dict{
     
+    if (![WXApi isWXAppInstalled]) {
+        [MBProgressHUD showError:@"您的手机未安装微信"];
+        return;
+    }
+    
     [WXApi registerApp:dict[@"appid"]];
     //需要创建这个支付对象
     PayReq *req   = [[PayReq alloc] init];

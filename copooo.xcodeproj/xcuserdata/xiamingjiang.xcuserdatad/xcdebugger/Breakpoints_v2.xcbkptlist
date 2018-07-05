@@ -29,5 +29,37 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HomeElectricTreasure/&#x4e3b;&#x9875;/&#x7535;&#x8d39;&#x7f34;&#x7eb3;/&#x7535;&#x8d39;&#x7f34;&#x7eb3;/PayElectricityFeeViewController.m"
+            timestampString = "552465517.711982"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "730"
+            endingLineNumber = "730"
+            landmarkName = "-payMoneyWithAliPay"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "HomeElectricTreasure/&#x4e3b;&#x9875;/&#x7535;&#x8d39;&#x7f34;&#x7eb3;/&#x7535;&#x8d39;&#x7f34;&#x7eb3;/PayElectricityFeeViewController.m"
+            timestampString = "552465517.712388"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "727"
+            endingLineNumber = "727"
+            landmarkName = "-payMoneyWithAliPay"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>
