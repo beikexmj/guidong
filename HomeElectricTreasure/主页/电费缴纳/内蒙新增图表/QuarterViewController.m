@@ -42,9 +42,14 @@ WYPieChartViewDatasource>
     trendHeaderView.date.text = [_electricUserQuarterTrend.pointTrendQuarter.currentDate stringByReplacingOccurrencesOfString:@"|" withString:@"/"];//@"2017/二季度";
     [_myScrollView addSubview:trendHeaderView];
     // Do any additional setup after loading the view.
+    NSInteger i= 0;
+    for (QuarterData *data in _electricUserQuarterTrend.pointTrendQuarter.data) {
+        if ([data.elecSum isEqualToString:@"0"]) {
+            i++;
+        }
+    }
     
-    
-    if (_electricUserQuarterTrend.pointTrendQuarter.data.count == 0) {
+    if (_electricUserQuarterTrend.pointTrendQuarter.data.count == 0 || i==3) {
         CGRect frame = CGRectMake(0, 100, k_MainBoundsWidth,  k_MainBoundsWidth/2.0+50);
         UIView *emptyDataView = [[UIView alloc]initWithFrame:frame];
         UIImage* image = [UIImage imageNamed:@"暂无数据-2"];
@@ -96,17 +101,10 @@ WYPieChartViewDatasource>
             _pieView.quarterLabel.text = [_electricUserQuarterTrend.pointTrendQuarter.currentDate substringFromIndex:5];//_electricUserQuarterTrend.pointTrendQuarter.data[0].quarter;
         }
         NSMutableArray *dataArry = [NSMutableArray array];
-        NSInteger i= 0;
         for (QuarterData *data in _electricUserQuarterTrend.pointTrendQuarter.data) {
-            
             [dataArry addObject:data.elecSum];
-            if ([data.elecSum isEqualToString:@"0"]) {
-                i++;
-            }
         }
-        if (i == 3) {
-            _pieView.values = @[@"1",@"1",@"1"];
-        }
+        _pieView.values = dataArry;
         
         [quarterChartView addSubview:_pieView];
         

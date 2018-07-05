@@ -189,6 +189,7 @@
             __strong typeof(weakSelf) strongSelf = weakSelf;
             [strongSelf.navigationController popViewControllerAnimated:YES];
         }]];
+        [self presentViewController:alert animated:YES completion:nil];
     } else {
         [self.navigationController popViewControllerAnimated:YES];
     }
