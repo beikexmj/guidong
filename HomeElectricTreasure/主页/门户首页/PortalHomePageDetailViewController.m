@@ -118,7 +118,7 @@
 - (void)renderFileItemWithNewsModel:(NewsAttatchmentModel *)model
 {
     __block FileDownloadItem *lastItem;
-    CGFloat itemHeight = 35.0;
+    CGFloat itemHeight = 40.0;
     CGFloat itemMargin = 8.0;
     __weak typeof(self) weakSelf = self;
     [model.form.list enumerateObjectsUsingBlock:^(NewsAttatchmentFormItem * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
