@@ -82,6 +82,7 @@
 		7C64F6331FBAE7E000CC1A4A /* ProtalHelpTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C64F6311FBAE7E000CC1A4A /* ProtalHelpTableViewCell.xib */; };
 		7C6821391F70A8900005C782 /* MyWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C6821371F70A8900005C782 /* MyWebViewController.m */; };
 		7C68213A1F70A8900005C782 /* MyWebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C6821381F70A8900005C782 /* MyWebViewController.xib */; };
+		7C6ACCE020F445EF000FAF99 /* UpdateCheckDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C6ACCDF20F445EF000FAF99 /* UpdateCheckDataModel.m */; };
 		7C6D7FB71F4281F800E128C6 /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7C6D7FB51F427FC900E128C6 /* Photos.framework */; };
 		7C6D7FBA1F42C57A00E128C6 /* BalanceDetailDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C6D7FB91F42C57A00E128C6 /* BalanceDetailDataModel.m */; };
 		7C6D7FBD1F42D87F00E128C6 /* VoucherListDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C6D7FBC1F42D87F00E128C6 /* VoucherListDataModel.m */; };
@@ -613,6 +614,8 @@
 		7C6821361F70A8900005C782 /* MyWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyWebViewController.h; sourceTree = "<group>"; };
 		7C6821371F70A8900005C782 /* MyWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyWebViewController.m; sourceTree = "<group>"; };
 		7C6821381F70A8900005C782 /* MyWebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyWebViewController.xib; sourceTree = "<group>"; };
+		7C6ACCDE20F445EF000FAF99 /* UpdateCheckDataModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UpdateCheckDataModel.h; sourceTree = "<group>"; };
+		7C6ACCDF20F445EF000FAF99 /* UpdateCheckDataModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UpdateCheckDataModel.m; sourceTree = "<group>"; };
 		7C6D7FB51F427FC900E128C6 /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
 		7C6D7FB81F42C57A00E128C6 /* BalanceDetailDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BalanceDetailDataModel.h; sourceTree = "<group>"; };
 		7C6D7FB91F42C57A00E128C6 /* BalanceDetailDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BalanceDetailDataModel.m; sourceTree = "<group>"; };
@@ -1665,6 +1668,8 @@
 				7C4E09F120E4755E004032AE /* ProtalHomePageClassDataModel.m */,
 				5FBE991620E61CC4009CBBBD /* NewsAttatchmentModel.h */,
 				5FBE991720E61CC4009CBBBD /* NewsAttatchmentModel.m */,
+				7C6ACCDE20F445EF000FAF99 /* UpdateCheckDataModel.h */,
+				7C6ACCDF20F445EF000FAF99 /* UpdateCheckDataModel.m */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -3602,6 +3607,7 @@
 				7CB0CA4A1F419230006EECB5 /* NSImage+WebCache.m in Sources */,
 				810830341D7949A50039FDE9 /* base64.m in Sources */,
 				81F2C8D61D77DB7D004AF5FB /* MJPropertyType.m in Sources */,
+				7C6ACCE020F445EF000FAF99 /* UpdateCheckDataModel.m in Sources */,
 				816005DE1F15C0960051932B /* WYSectorLayer.m in Sources */,
 				7C9F1CE31F4439E8008D0A4C /* ElectricUserQuarterTrendDataModel.m in Sources */,
 				8109F1381D65A5E200CBC75F /* ModifyNickNameViewController.m in Sources */,

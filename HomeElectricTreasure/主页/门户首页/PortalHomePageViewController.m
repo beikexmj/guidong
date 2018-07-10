@@ -11,7 +11,8 @@
 #import "ServiceAndNoticeViewController.h"
 #import "ProtalHomePageSubVC.h"
 #import "ProtalHomePageClassDataModel.h"
-@interface PortalHomePageViewController ()
+#import "UpdateCheckDataModel.h"
+@interface PortalHomePageViewController ()<UIAlertViewDelegate>
 @property (nonatomic,strong)NSArray<ProtalHomePageClassFormList *> *data;
 @end
 
@@ -61,8 +62,44 @@
         ServiceAndNoticeViewController *page = [[ServiceAndNoticeViewController alloc]init];
         [self.navigationController pushViewController:page animated:YES];
     }
-    
+    [self cheakUpdateApp];
     // Do any additional setup after loading the view from its nib.
+}
+- (void)cheakUpdateApp{
+    [ZTHttpTool postWithUrl:@"anonymous/checkUpdate4IOS" param:@{} success:^(id responseObj) {
+        NSString * str = [JGEncrypt encryptWithContent:[responseObj mj_JSONObject][@"data"] type:kCCDecrypt key:KEY];
+        NSLog(@"%@",[DictToJson dictionaryWithJsonString:str]);
+        UpdateCheckDataModel *data = [UpdateCheckDataModel mj_objectWithKeyValues:str];
+        if (data.rcode == 0) {
+            NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
+            // app版本
+            NSString *app_Version = [[infoDictionary objectForKey:@"CFBundleShortVersionString"] stringByReplacingOccurrencesOfString:@"." withString:@""];
+            NSString *versionName = [data.form.iosVersionName stringByReplacingOccurrencesOfString:@"." withString:@""];
+            if (versionName.integerValue > app_Version.integerValue) {
+                if (data.form.iosUpdate == 1) {//可选择更新
+                    UIAlertView *alert  = [[UIAlertView alloc]initWithTitle:@"版本更新" message:data.form.message delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
+                    alert.tag = 10;
+                    [alert show];
+                }else if (data.form.iosUpdate == 2){//强制更新
+                    UIAlertView *alert  = [[UIAlertView alloc]initWithTitle:@"版本更新" message:data.form.message delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+                    alert.tag = 20;
+                    [alert show];
+                  
+                }
+            }
+        }
+    } failure:^(NSError *error) {
+        
+    }];
+}
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    if (alertView.tag == 10) {
+        if (buttonIndex == 1) {
+            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"itms-apps://itunes.apple.com/cn/app/%E6%A1%82%E4%B8%9C%E7%94%B5%E5%8A%9B%E5%B1%85%E5%AE%B6%E5%90%88/id1360103858?mt=8"]];
+        }
+    }else if (alertView.tag == 20){
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"itms-apps://itunes.apple.com/cn/app/%E6%A1%82%E4%B8%9C%E7%94%B5%E5%8A%9B%E5%B1%85%E5%AE%B6%E5%90%88/id1360103858?mt=8"]];
+    }
 }
 // 添加所有子控制器
 - (void)setUpAllViewController

@@ -602,13 +602,13 @@
             [self showAlert];
             return;
         }
-        PayElectricityFeeViewController *page = [[PayElectricityFeeViewController alloc]init];
+        PayElectricityFeeViewController *page = [[PayElectricityFeeViewController alloc]initWithNibName:@"PayElectricityFeeViewController" bundle:nil];
         page.accountNo = _eleFeePaymentArry[tag/10].accountNo;
         indexSectionForElectCard = tag/10;
         page.comfromFlag = 2;//后付费
         [self.navigationController pushViewController:page animated:YES];
     }else{
-        PayElectricityFeeViewController * page = [[PayElectricityFeeViewController alloc]init];
+        PayElectricityFeeViewController * page = [[PayElectricityFeeViewController alloc]initWithNibName:@"PayElectricityFeeViewController" bundle:nil];
         page.accountNo = _eleFeePaymentArry[tag/10].accountNo;
         indexSectionForElectCard = tag/10;
         page.comfromFlag = 1;//预付费
