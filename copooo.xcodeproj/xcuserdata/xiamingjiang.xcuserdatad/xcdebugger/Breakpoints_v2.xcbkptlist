@@ -6,7 +6,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.ExceptionBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             scope = "0"
@@ -32,32 +32,32 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "HomeElectricTreasure/&#x4e3b;&#x9875;/&#x7535;&#x8d39;&#x7f34;&#x7eb3;/&#x7535;&#x8d39;&#x7f34;&#x7eb3;/PayElectricityFeeViewController.m"
-            timestampString = "552465517.711982"
+            filePath = "HomeElectricTreasure/&#x4e3b;&#x9875;/&#x7535;&#x8d39;&#x7f34;&#x7eb3;/ElectricityFeePaymentViewController.m"
+            timestampString = "552814571.169528"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "730"
-            endingLineNumber = "730"
-            landmarkName = "-payMoneyWithAliPay"
+            startingLineNumber = "612"
+            endingLineNumber = "612"
+            landmarkName = "-payFeeBtnClickIndex:target:tag:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "HomeElectricTreasure/&#x4e3b;&#x9875;/&#x7535;&#x8d39;&#x7f34;&#x7eb3;/&#x7535;&#x8d39;&#x7f34;&#x7eb3;/PayElectricityFeeViewController.m"
-            timestampString = "552465517.712388"
+            filePath = "HomeElectricTreasure/&#x4e3b;&#x9875;/&#x95e8;&#x6237;&#x9996;&#x9875;/PortalHomePageViewController.m"
+            timestampString = "552882947.492184"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "727"
-            endingLineNumber = "727"
-            landmarkName = "-payMoneyWithAliPay"
+            startingLineNumber = "72"
+            endingLineNumber = "72"
+            landmarkName = "-cheakUpdateApp"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

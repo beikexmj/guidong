@@ -29,9 +29,9 @@
 //#define BASE_URL  @"http://172.16.103.229:8080" //本地
 //#define BASE_URL  @"http://172.16.103.14:8080" //本地
 //#define BASE_URL  @"http://172.16.101.175:8080" //本地
-#if 0
-#define BASE_URL  @"https://app.966068.cn/app" //桂东正式服
-#define BASE_URL2  @"https://app.966068.cn" //桂东正式服
+#if 1
+#define BASE_URL  @"https://guidong.jujiahe.com/app" //桂东正式服
+#define BASE_URL2  @"https://guidong.jujiahe.com" //桂东正式服
 #else
 #define BASE_URL  @"http://117.141.240.122:8080/app" //桂东测试服
 #define BASE_URL2  @"http://117.141.240.122:8080" //桂东测试服
